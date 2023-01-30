@@ -1,0 +1,57 @@
+#current-route-visualizer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  margin-bottom: 1rem;
+
+  a {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: transparent;
+    border: none;
+    padding: 0.25rem 0;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      opacity: 0.8;
+    }
+
+    &.root span {
+      color: var(--blue);
+    }
+
+    svg {
+      height: 1.25rem;
+
+      fill: var(--blue);
+
+      margin-right: 0.5rem;
+    }
+
+    span {
+      font: var(--text-sm);
+      color: var(--text);
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+
+    &.route {
+      margin-left: 0.25rem;
+    }
+
+    &.route:before {
+      content: "/";
+      font: var(--text-md);
+      font-weight: 400;
+      color: var(--placeholder);
+      cursor: default;
+      user-select: none;
+
+      margin-right: 0.25rem;
+    }
+  }
+}

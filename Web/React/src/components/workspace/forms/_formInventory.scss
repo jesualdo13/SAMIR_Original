@@ -1,0 +1,238 @@
+.form-inventory {
+  .table-container {
+    margin: 0 !important;
+
+    .cell .input .inner input {
+      max-width: 8rem;
+      padding: 1rem 0.5rem !important;
+    }
+
+    .table.c18 .cell {
+      &.header {
+        &:nth-of-type(1),
+        &:nth-of-type(4),
+        &:nth-of-type(18) {
+          min-width: 4rem;
+        }
+        &:nth-of-type(7),
+        &:nth-of-type(9),
+        &:nth-of-type(11),
+        &:nth-of-type(13),
+        &:nth-of-type(15),
+        &:nth-of-type(17) {
+          min-width: 5rem;
+        }
+        &:nth-of-type(2),
+        &:nth-of-type(3),
+        &:nth-of-type(5),
+        &:nth-of-type(6),
+        &:nth-of-type(8),
+        &:nth-of-type(10),
+        &:nth-of-type(12),
+        &:nth-of-type(14),
+        &:nth-of-type(16) {
+          min-width: 6rem;
+        }
+
+        &:nth-of-type(3) {
+          min-width: 8rem;
+        }
+      }
+
+      .input input {
+        display: block;
+      }
+    }
+    .table.c7 .cell {
+      &.header {
+        &:nth-of-type(1),
+        &:nth-of-type(2),
+        &:nth-of-type(3),
+        &:nth-of-type(5),
+        &:nth-of-type(6),
+        &:nth-of-type(7) {
+          min-width: 8rem;
+        }
+        &:nth-of-type(4) {
+          min-width: 14rem;
+        }
+      }
+
+      .input input {
+        display: block;
+      }
+    }
+    .table.c3 .cell {
+      &.header {
+        &:nth-of-type(1),
+        &:nth-of-type(2) {
+          min-width: 10rem;
+        }
+        &:nth-of-type(3) {
+          min-width: 12rem;
+        }
+      }
+
+      .input input {
+        display: block;
+      }
+    }
+    .table.c2 .cell {
+      &.header {
+        &:nth-of-type(1) {
+          min-width: 8rem;
+        }
+        &:nth-of-type(2) {
+          min-width: 12rem;
+        }
+      }
+
+      .input input {
+        display: block;
+      }
+    }
+  }
+
+  .tabs-menu .aggregator.eight {
+    grid-template-columns: repeat(8, minmax(4rem, 1fr));
+  }
+
+  .row:nth-child(3) > .grid .grid.three {
+    grid-template-columns: minmax(4rem, 1fr) minmax(4rem, 1.25fr) minmax(
+        4rem,
+        1fr
+      );
+  }
+
+  // Medias
+  @media screen and (max-width: 1324px) {
+    .tabs-menu .content > .container .aggregator {
+      grid-auto-flow: initial;
+      grid-template-columns: repeat(4, minmax(4rem, 1fr));
+    }
+
+    .row:nth-child(3) > .grid .grid {
+      &.two {
+        grid-template-columns: minmax(4rem, 1fr);
+      }
+      &.three {
+        grid-template-columns: minmax(4rem, 1fr);
+      }
+    }
+
+    .row:nth-child(4) .seven {
+      grid-template-columns: repeat(4, minmax(4rem, 1fr));
+    }
+  }
+  @media screen and (max-width: 1180px) {
+    .row:nth-child(1) .three {
+      .two {
+        grid-template-columns: minmax(4rem, 1fr);
+        align-content: center;
+      }
+      .three {
+        grid-template-columns: minmax(4rem, 1fr);
+      }
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .tabs-menu .content > .container .aggregator {
+      grid-template-columns: repeat(3, minmax(4rem, 1fr));
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .row:nth-child(2) .three {
+      grid-template-columns: minmax(4rem, 1fr);
+    }
+    .row:nth-child(3) .three {
+      .two {
+        grid-template-columns: minmax(4rem, 1fr);
+        align-content: center;
+      }
+      .three {
+        grid-template-columns: minmax(4rem, 1fr);
+      }
+    }
+    .row:nth-child(4) .seven {
+      grid-template-columns: repeat(3, minmax(4rem, 1fr));
+    }
+
+    .basic-buttons.version-2 {
+      grid-template-columns: 52px 1fr 52px 1fr;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    .tabs-menu .content > .container .aggregator {
+      grid-template-columns: repeat(2, minmax(4rem, 1fr));
+    }
+
+    .row:nth-child(1) .three {
+      grid-template-columns: minmax(4rem, 1fr);
+
+      .two {
+        grid-template-columns: repeat(2, minmax(4rem, 1fr));
+        align-content: center;
+      }
+      .three {
+        grid-template-columns: repeat(2, minmax(4rem, 1fr));
+      }
+    }
+    .row:nth-child(3) .three {
+      grid-template-columns: minmax(4rem, 1fr);
+
+      .two {
+        grid-template-columns: repeat(2, minmax(4rem, 1fr));
+        align-content: center;
+      }
+      .three {
+        grid-template-columns: repeat(2, minmax(4rem, 1fr));
+      }
+    }
+    .row:nth-child(4) .seven {
+      grid-template-columns: repeat(2, minmax(4rem, 1fr));
+    }
+    .tabs-menu .tabs {
+      grid-template-columns: repeat(2, minmax(4rem, 1fr));
+    }
+  }
+  @media screen and (max-width: 460px) {
+    .action-btn {
+      margin-top: 0;
+    }
+
+    .row:nth-child(1) .three {
+      .two {
+        grid-template-columns: minmax(4rem, 1fr);
+        align-content: center;
+      }
+      .three {
+        grid-template-columns: minmax(4rem, 1fr);
+      }
+    }
+    .row:nth-child(3) .three {
+      .two {
+        grid-template-columns: minmax(4rem, 1fr);
+        align-content: center;
+      }
+      .three {
+        grid-template-columns: minmax(4rem, 1fr);
+      }
+    }
+    .row:nth-child(4) .seven {
+      grid-template-columns: minmax(4rem, 1fr);
+    }
+
+    .tabs-menu {
+      .tabs {
+        grid-template-columns: minmax(4rem, 1fr);
+      }
+      .content > .container .aggregator {
+        grid-template-columns: minmax(4rem, 1fr);
+      }
+    }
+
+    .basic-buttons.version-2 {
+      grid-template-columns: 52px 1fr;
+    }
+  }
+}

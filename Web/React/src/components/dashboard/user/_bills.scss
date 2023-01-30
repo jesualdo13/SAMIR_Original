@@ -1,0 +1,42 @@
+#bills > .container {
+  width: 100%;
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: flex-start !important;
+
+  padding: 0.25rem 1rem 1rem;
+
+  & > p {
+    font: var(--text-sm);
+    color: var(--text);
+
+    margin-bottom: 1rem;
+  }
+
+  .message {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    background-color: var(--green);
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+
+    margin-bottom: 1rem;
+
+    svg {
+      height: 2rem;
+      fill: var(--white);
+
+      margin-right: 1rem;
+    }
+
+    p {
+      font: var(--text-sm);
+      color: var(--white);
+    }
+  }
+}

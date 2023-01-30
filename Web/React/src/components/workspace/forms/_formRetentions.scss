@@ -1,0 +1,99 @@
+.form-retentions {
+  .table-container {
+    margin-bottom: 1rem;
+    min-height: 82px;
+
+    .cell {
+      &.header {
+        &:nth-of-type(7) {
+          min-width: 4rem;
+        }
+        &:nth-of-type(1),
+        &:nth-of-type(2),
+        &:nth-of-type(4),
+        &:nth-of-type(5),
+        &:nth-of-type(6) {
+          min-width: 9rem;
+        }
+        &:nth-of-type(3) {
+          min-width: 16rem;
+        }
+      }
+
+      .input input {
+        display: block;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1300px) {
+    .main .grid.six {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  @media screen and (max-width: 1020px) {
+    .main {
+      .grid.five {
+        grid-template-columns: repeat(3, 1fr);
+
+        &:last-of-type {
+          margin-bottom: 2rem;
+        }
+      }
+
+      .grid.two.f {
+        .grid.three {
+          grid-template-columns: repeat(1, 1fr);
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .main {
+      .grid.two.f {
+        .grid.three {
+          grid-template-columns: repeat(1, 1fr);
+        }
+
+        .grid:first-of-type .grid.two {
+          grid-template-columns: repeat(1, 1fr);
+
+          .action-btn {
+            margin: 0;
+            margin-bottom: 1rem;
+          }
+        }
+      }
+
+      .basic-buttons.version-5 {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+  @media screen and (max-width: 720px) {
+    .main {
+      .grid.five {
+        grid-template-columns: 1fr;
+
+        .checkbox {
+          margin-bottom: 1rem;
+        }
+      }
+      .grid.six {
+        grid-template-columns: 1fr;
+
+        .action-btn {
+          margin: 0;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 460px) {
+    .main {
+      .grid.two.f {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

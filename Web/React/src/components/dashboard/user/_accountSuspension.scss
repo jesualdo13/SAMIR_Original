@@ -1,0 +1,55 @@
+#accountSuspension > .container {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  padding: 0.25rem 1rem 1rem;
+
+  & > p {
+    font: var(--text-sm);
+    color: var(--text);
+
+    margin: 1rem 0;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+    &:last-of-type {
+      margin-bottom: 2rem;
+    }
+
+    span {
+      font-weight: 700;
+
+      white-space: pre-wrap;
+    }
+  }
+
+  .button-xl.warning {
+    background-color: var(--orange);
+
+    padding: 0.75rem;
+
+    svg {
+      height: 1.75rem;
+      fill: var(--white);
+      margin-right: 1rem;
+
+      flex-shrink: 0;
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    .button-xl.warning {
+      flex-direction: column;
+
+      svg {
+        margin-right: 0;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

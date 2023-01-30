@@ -1,0 +1,1729 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="estilosMainDashboard.css">
+    <link rel="stylesheet" href="/fonts/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+  <header style="margin-bottom: 20px;">
+		<nav class="navegacion">
+			<ul class="menu">
+
+        <li><a href="#">Inicio</a>
+					<ul class="submenu">
+						<li><a href="#" onclick="mostrarDashboard()">Dashboard</a></li>
+						<li><a href="index.html" onclick="ocultarTodasLasVentanas()">CerrarSesion</a></li>
+					</ul>
+				</li>
+
+        <li><a href="#">Registro y Control</a>
+					<ul class="submenu">
+						<li><a href="#" onclick="mostrarCategoria()">Categorias</a></li>
+            <!-- <li><a href="#" onclick="mostrarCategorias()">Grupos y Personas</a></li> -->
+            <li><a href="#" onclick="mostrarGrupo()">Grupo</a></li>
+            <li><a href="#" onclick="mostrarGuiaRemision()">Guia de Remision</a></li>
+            <li><a href="#" onclick="mostrarRetencion()">Retencion</a></li>
+            <li><a href="#" onclick="mostrarFactura()">Facturacion</a></li>
+            <li><a href="#" onclick="mostrarInventario()">Inventario</a></li>
+					</ul>
+				</li>
+
+				<li><a href="#">Reportes</a></li>
+				<li><a href="#">Sistemas y Config</a></li>
+				<li><a href="#">Ayuda</a></li>
+
+
+        <li style="margin-left: 7%; margin-top: 3px;">       
+          <div id="divDerecha" >
+            <input style="width: 23%;" type="text" placeholder="Buscar Acciones">
+            <!-- <div id="divUsuario"> -->
+              <img id="imgUsuario" src="blanco.png" alt="">
+              <span>USERNAME</span>
+            <!-- </div> -->
+          </div>
+          
+        </li>
+			</ul>
+      <div id="divPestania" style="background-color: #2aa6ff; height: 40%;">
+        <span  class="pestania2" style="text-align: right; float: right;">Empresa | Fecha</span>
+      </div>
+      <p></p>
+
+		</nav>
+    <!-- <div style="background-color: red;">dd</div> -->
+	</header>
+  
+  <main>
+
+
+  <div class="row" id="mainDashboard" style="display: none;"> <!-- style="display: none;" -->
+     <section style="text-align: center;" class="col-2">
+      <img src="gris.png" alt="">
+  
+      <a style="text-decoration: none; color:black;" href="">Subir Logo</a>
+      </section>
+
+
+
+    <form class="col-10 row">
+      
+
+      <div class="form-group col-3">
+        <label for="exampleFormControlInput1">RUC</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-5">
+        <label for="exampleFormControlInput1">Razon Social</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-4">
+        <label for="exampleFormControlInput1">Nombre Corto</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+
+
+
+      <div class="form-group col-5">
+        <label for="exampleFormControlInput1">Representante Legal</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-7">
+        <label for="exampleFormControlInput1">Actividad Comercial</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+
+
+
+
+      <div class="form-group col-5">
+        <label for="exampleFormControlInput1">Direccion</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-3">
+        <label for="exampleFormControlInput1">Correo para Ventas</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-4">
+        <label for="exampleFormControlInput1">Correo para Retenciones</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+
+
+
+      <div class="form-group col-5">
+        <label for="exampleFormControlInput1">Pagina Web, Dominio</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-3">
+        <label for="exampleFormControlInput1">Telefonos</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-4">
+        <label for="exampleFormControlInput1">Celular</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+
+
+
+
+      <div class="form-group col-3">
+        <label for="exampleFormControlInput1">Fax</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-5">
+        <label for="exampleFormControlInput1">Autorizacion SRI</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-4">
+        <label for="exampleFormControlInput1">Resolucion SRI</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+
+
+
+
+
+      <div class="form-group col-3">
+        <label for="exampleFormControlInput1">Codigo Establecimiento</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-3">
+        <label for="exampleFormControlInput1">Punto Emision Principal</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-6">
+        <label for="exampleFormControlInput1">Distribuidor</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+
+
+
+
+
+      <div class="form-group col-5">
+        <label for="exampleFormControlSelect1">Tipo de Empresa</label>
+        <select class="form-control" id="exampleFormControlSelect1" >
+          <option></option>
+
+        </select>
+      </div>
+
+      <div style="padding-bottom: 5%;" class="form-group col-7">
+        <label for="exampleFormControlSelect1">Localidad</label>
+        <select class="form-control" id="exampleFormControlSelect1" >
+          <option>Buscar localidad ... y seleccionarla</option>
+        </select>
+      </div>
+
+
+
+
+      <div class="col-6"></div>
+      <button id="btnGuardarCambios" type="submit" class="btn btn-primary col-6 ">GUARDAR CAMBIOS</button>
+
+
+      
+    </form>
+
+
+  </div>
+
+
+  <div id="mainCategoria" style="display: none;
+  justify-content: center;" >
+    <form class="col-6 row">
+      
+      <h2 style="font-size: 17px; color: #0095FF;">REGISTRO DE CATEGORIAS</h2>
+      <div class="form-group col-2">
+        <label for="exampleFormControlInput1">ID</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-group col-10">
+        <label for="exampleFormControlInput1">Nombre</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+  
+  
+      <div class="form-group col-12">
+        <label for="exampleFormControlInput1">Descripcion</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+  
+      <div class="form-group col-2">
+        <label for="exampleFormControlInput1">Pertenece a</label>
+        <!-- <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""> -->
+      </div>
+  
+      <div class="form-group col-7">
+        <label for="exampleFormControlInput1">Grupo Principal(Opcional)</label>
+        <!-- <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""> -->
+      </div>
+      <div class="col-3"></div>
+  
+      <div class="form-group col-2">
+        <!-- <label for="exampleFormControlInput1">Pertenece a</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-group col-8">
+        <!-- <label for="exampleFormControlInput1">Grupo Principal(Opcional)</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+    
+      <button id="btnBuscar" type="submit" class="btn btn-primary col-2" style="width: 15.5%;">Buscar</button>
+  
+  
+      <div style="padding-top: 4%;" class="row col-12">
+        <!-- <div class="col-0.5"></div> -->
+        <button style="background-color: #5A6B88; border: 0; margin-left: 4%;" type="submit" class="btn btn-primary col-1 "><span class="icon-magnifying-glass"></span></button>
+        <button style="margin: 0 2% 0 2%; width: 75%;" type="submit" class="btn btn-primary col-9 ">GUARDAR REGISTRO</button>
+        <button style="background-color: #B16868; border: 0;" id="" type="submit" class="btn btn-primary col-1 "><span class="icon-trash"></span></button>
+      </div>
+  
+  
+    </form>
+  </div>
+
+
+
+
+
+
+  <div class="row" id="divGrupo" style="justify-content: center; display: none;">
+
+    <form class="col-6 row">
+        
+      <h2 style="font-size: 17px; color: #0095FF;">REGISTRO DE GRUPOS</h2>
+      <div class="form-group col-2">
+        <label for="exampleFormControlInput1">ID</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-group col-6">
+        <label for="exampleFormControlInput1">Nombre</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-check col-3" style="padding-top: 3.7%; margin-left: 20px;">
+        <label for="">BUSCAR ANULADOS</label>
+        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+      </div>
+  
+      <!-- <div class="col-4"></div> -->
+  
+  
+  
+  
+  
+      <div class="form-group col-2">
+        <label for="exampleFormControlInput1">Pertenece a</label>
+        <!-- <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""> -->
+      </div>
+  
+      <div class="form-group col-6">
+        <label for="exampleFormControlInput1">Grupo Principal(Opcional)</label>
+        <!-- <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""> -->
+      </div>
+      <div class="col-4"></div>
+  
+  
+  
+  
+      <div class="form-group col-2">
+        <!-- <label for="exampleFormControlInput1">Pertenece a</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-group col-6">
+        <!-- <label for="exampleFormControlInput1">Grupo Principal(Opcional)</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <button id="btnCargar" type="submit" class="btn btn-primary col-1">O</button>
+  
+      <button id="btnBuscar" type="submit" class="btn btn-primary col-3" >Seleccionar</button>
+  
+      
+  
+  
+  
+      <div style="padding-top: 4%;" class="row col-12">
+        <!-- <div class="col-0.5"></div> -->
+        <button style="background-color: #5A6B88; border: 0; margin-left: 4%;" type="submit" class="btn btn-primary col-1 "><span class="icon-magnifying-glass"></span></button>
+        <button style="margin: 0 2% 0 2%; width: 75%;" type="submit" class="btn btn-primary col-9 ">GUARDAR REGISTRO</button>
+        <button style="background-color: #B16868; border: 0;" id="" type="submit" class="btn btn-primary col-1 "><span class="icon-trash"></span></button>
+      </div>
+  
+  
+    </form>
+
+  </div>
+
+
+
+
+
+
+
+
+
+  <div class="row" id="divGuiaRemision" style="display: none; margin-left: 0.5%;">
+
+    <form class="row" style="margin-top: 5%;">
+
+      <div class="form-group col-1">
+        <label for="exampleFormControlInput1">Id</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-group col-2">
+        <label for="exampleFormControlInput1">Numero Guia</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-group col-2">
+        <label for="exampleFormControlInput1">Fecha Emision</label>
+        <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+  
+      <div class="form-group col-3">
+        <label for="exampleFormControlInput1">.</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-group col-2">
+        <label for="exampleFormControlInput1">Fecha Emision</label>
+        <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-group col-2">
+        <label for="exampleFormControlInput1">Fecha Emision</label>
+        <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+     <!-- -------------- -->
+  
+     <div class="form-group col-1">
+      <label for="exampleFormControlInput1">Id</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+  
+    <div class="form-group col-2">
+      <label for="exampleFormControlInput1">Nombre Transportista</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+  
+    <button id="btnBuscar" type="submit" class="btn btn-primary col-2" style="height: 8%; margin-top: 1.5%; background-color: #667794;" ><span style="padding-right: 10px;" class="icon-magnifying-glass"></span> BUSCAR </button>
+  
+  
+  
+  
+    <div class="form-group col-3">
+      <label for="exampleFormControlInput1">Id</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+  
+    <div class="form-group col-2">
+      <label for="exampleFormControlInput1">Nombre Destinatario</label>
+      <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+  
+<button id="btnBuscar" type="submit" class="btn btn-primary col-2" style="height: 8%; margin-top: 1.5%; background-color: #667794;" ><span style="padding-right: 10px;" class="icon-magnifying-glass"></span> BUSCAR </button>
+  
+  
+  
+     <!-- -------------- -->
+  
+     <div class="form-group col-2">
+      <label for="exampleFormControlInput1">Id</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+  
+    <div class="form-group col-3">
+      <label for="exampleFormControlInput1">Nombre Transportista</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+  
+  
+  
+    <div class="form-group col-4">
+      <label for="exampleFormControlInput1">Id</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+  
+  
+    <button id="btnBuscar" type="submit" class="btn btn-primary col-3" style="height: 8%; margin-top: 1.5%; background-color: #667794;" ><span style="padding-right: 10px;" class="icon-magnifying-glass"></span>SEL. FACTURA </button>
+    <!-- <button style="background-color: #5A6B88; border: 0;" type="submit" class="btn btn-primary col-1 "><span class="icon-magnifying-glass"></span></button> -->
+  
+    <table style="text-align:center; border-bottom: 1px solid rgba(128, 128, 128, 0.634); margin-top: 1%;">
+      <tr style="background-color: #0095FF; color: white;">
+        <td> <strong>ID</strong></td>
+        <td><strong>UND</strong></td>
+        <td><strong>DESCRIPCION</strong></td>
+        <td><strong>CANTIDAD</strong></td>
+        <td><strong>ADICIONAL</strong></td>
+        <td><strong>DEL</strong></td>
+      </tr>
+  
+      <tr>
+        <td>123</td>
+        <td>UND</td>
+        <td>*ARTICULO DE VENTA 1</td>
+        <td>5</td>
+        <td>Adicional</td>
+        <td>O</td>
+      </tr>
+    </table>
+
+
+    <button id="btnBuscar" type="submit" class="btn btn-primary col-3" style="height: 8%; width: 24%; margin-top: 1.5%; background-color: #667794; margin-left: 10px;" >AGREGAR PRODUCTOS </button>
+
+    <div class="form-group col-3">
+      <label for="exampleFormControlInput1">Ruta</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+  
+    <div class="form-group col-2">
+      <label for="exampleFormControlInput1">Cod Aduanero</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+    <div class="form-group col-2">
+      <label for="exampleFormControlInput1">Cod Estab. Dest.</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+    <div class="form-group col-2">
+      <label for="exampleFormControlInput1">Placa Trans</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+  
+  
+    <div class="form-group col-12">
+      <label for="exampleFormControlInput1">Direccion de Destino</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+
+    <div class="form-group col-12">
+      <label for="exampleFormControlInput1">Motivo de Traslado</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+  
+
+    <button id="btnBuscar" type="submit" class="btn btn-primary" style="height: 8.5%; margin: 1.5% 0.5% 0 0.7%; background-color: #0095FF; width: 65%;" >REGISTRAR DOCUMENTO </button>
+
+    <button id="btnBuscar" type="submit" class="btn btn-primary" style="height: 8.5%; margin-top: 1.5%; background-color: #E0E0E0; width: 33%; color: black;" >CANCELAR </button>
+
+
+
+
+
+    
+    </form>
+    
+ 
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+  <div class="row" id="divRetencion" style="justify-content: center; display: none;">
+
+    <form class="col-9 row">
+  
+      <div class="form-group col-2">
+        <label for="exampleFormControlInput1">Fecha de Retencion</label>
+        <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-group col-2">
+        <label for="exampleFormControlInput1">Numero de Retencion</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-group col-2">
+        <label for="exampleFormControlInput1">Periodo Fiscal</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-group col-2">
+        <!-- <label for="exampleFormControlSelect1">Localidad</label> -->
+        <label for=""></label>
+        <select class="form-control" id="exampleFormControlSelect1" >
+          <option>1-Factura</option>
+        </select>
+      </div>
+  
+      <div class="form-group col-4">
+        <label for="exampleFormControlInput1">Autorizacion Retencion</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="row col-12">
+        <h3 class="col-6" style="font-size: 17px; "><b>Datos de Documento y Proveedor</b></h3>
+        <h3 class="col-2" style="font-size: 17px; "><b>Cod. Ingre</b></h3>
+        <h3 class="col-3" style="font-size: 17px; "><b>Numero de Factura</b></h3>
+      </div>
+      
+  
+  
+  
+  
+      <div class="form-group col-2">
+        <!-- <label for="exampleFormControlInput1">ID</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-group col-3">
+        <!-- <label for="exampleFormControlInput1">Numero de Retencion</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <button style="background-color: #5A6B88; border: 0;" type="submit" class="btn btn-primary col-1 "><span class="icon-magnifying-glass"></span></button>
+  
+      <div class="form-group col-2">
+        <!-- <label for="exampleFormControlInput1">Periodo Fiscal</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-group col-2">
+        <!-- <label for="exampleFormControlInput1">Periodo Fiscal</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <button id="btnBuscar" type="submit" class="btn btn-primary col-2" ><span class="icon-magnifying-glass"></span> Buscar Documento</button>
+  
+  
+  
+  
+      <div class="form-group col-4">
+        <label for="exampleFormControlInput1">Observacion</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-group col-2">
+        <h3 style="font-size: 17px; "><b>Fecha Emision</b></h3>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-group col-4">
+        <h3 style="font-size: 17px; "><b>Autorizacion de Factura</b></h3>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-check col-1" style="padding-top: 2.7%;">
+        <label for="">Fisica</label>
+        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+      </div>
+      <div class="form-check col-1" style="padding-top: 2.7%; font-size: 15px;">
+        <label for="">Asumida</label>
+        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1" aria-label="...">
+      </div>
+  
+      
+  
+  
+  <table class="default" style="background-color: #D9D9D9; border: #D9D9D9 10px solid; margin: 1% 0 1% 0;">
+  
+    <tr>
+      <td>Codigo Impuesto</td>
+      <td>Codigo Retencion</td>
+      <td>Detalle Impuesto</td>
+      <td>Base Imponible</td>
+      <td>% Retención</td>
+      <td>Valor Retenido</td>
+    </tr>
+  
+    <tr style="background-color: rgb(237, 237, 237);">
+      <td>1</td>
+      <td>304A</td>
+      <td>Comisiones y demas pagos</td>
+      <td>20.00</td>
+      <td>10%</td>
+      <td>5.50</td>
+    </tr>
+  
+    <tr style="height: 10rem; background-color: white; border: #D9D9D9 10px solid;">
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  
+  </table>
+  
+  
+      <!-- <div class="form-group col-2">
+        <label for="exampleFormControlInput1">Periodo Fiscal</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+  
+      <div class="form-group col-2">
+        <label for="exampleFormControlInput1">Autorizacion Retencion</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div> -->
+  
+  
+      <div class="col-9 row" style="font-size: 14px;">
+        <div class="form-group col-2">
+          <label for="exampleFormControlInput1">Tipo de Impuesto</label>
+          <select class="form-control" id="exampleFormControlSelect1" >
+            <option>Renta</option>
+          </select>
+        </div>
+  
+        <div class="form-group col-2">
+          <label for="exampleFormControlInput1">Codigo Retencion</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+  
+        <div class="form-group col-5">
+          <label for="exampleFormControlInput1">Codigo Retencion</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+  
+        <div class="form-group col-3 row">
+          <label class="col-12" for=""></label>
+          <button id="btnBuscar" type="submit" class="btn btn-primary col-12" style="height: 60%; margin-top: 10%; background-color: #507083;">Buscar Impuesto</button>
+        </div>
+        
+        
+  
+        <div class="form-group col-2">
+          <label for="exampleFormControlInput1">Codigo Retencion</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+  
+        <div class="form-group col-2">
+          <label for="exampleFormControlInput1">Codigo Retencion</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+  
+        <div class="form-group col-2">
+          <label for="exampleFormControlInput1">Codigo Retencion</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+  
+        <div class="form-group col-3 row">
+          <label class="col-12" for=""></label>
+          <button id="btnBuscar" type="submit" class="btn btn-primary col-12" style="height: 60%; margin-top: 10%; background-color: #507083;">Agregar Impuesto</button>
+        </div>
+      </div>
+  
+      <div class="col-3 row font-size: 10px;">
+        <div class="form-group col-6">
+          <label style="font-size: 12px;" for="exampleFormControlInput1">Base Imp. Factura $</label>
+          <input style="height: 40%;" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+        <div class="form-group col-6">
+          <label style="font-size: 12px;" for="exampleFormControlInput1">IVA Factura $</label>
+          <input style="height: 40%;" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+        
+        <div class="form-group col-6">
+          <label style="font-size: 12px;" for="exampleFormControlInput1">Total R. Renta $</label>
+          <input style="height: 40%;" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+        <div class="form-group col-6">
+          <label style="font-size: 12px; " for="exampleFormControlInput1">Total R. IVA $</label>
+          <input style="height: 40%;" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+  
+      </div>
+  
+  
+      <div class="col-10 row" style="padding-top: 1.5%; height: 8%;">
+        <button id="btnBuscar" type="submit" class="btn btn-primary col-3" style="margin: 0 2% 0 1%;">Cargar Por Cable de Acceso</button>
+        <button id="btnBuscar" type="submit" class="btn btn-primary col-6">REGISTRAR RETENCION</button>
+        <button id="btnBuscar" type="submit" class="btn btn-primary col-2" style="margin: 0 0 0 2%;">LIMPIAR</button>
+      </div>
+  
+      <div  class="form-group col-2 row">
+        <div class="form-group col-12" >
+          <label style="font-size: 12px; " for="exampleFormControlInput1">IVA Factura $</label>
+          <input style="height: 40%;" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+        <div class="form-group col-12">
+          <label style="font-size: 12px;" for="exampleFormControlInput1">IVA Factura $</label>
+          <input style="height: 40%;" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+      </div>
+  
+  
+  
+  
+    </form>
+
+  
+  </div>
+
+
+
+
+
+
+
+
+  <div class="row" id="divFactura" style="justify-content: center; display: none; margin-top: 30px;">
+    
+    <div style="width: 20px;"></div>
+  <form class="col-11 row margenFactura">
+
+    <div style="border: 1px grey solid; padding-bottom: 1%; width: 49.5%; margin-left: 0;" class="row">
+      <label class="col-12" for="exampleFormControlInput1" style="margin-left: 0.5%;">Datos de Cliente: </label>
+    
+      <div class="form-group col-2 margenFactura" >
+        <!-- <label for="exampleFormControlInput1">Fecha de Retencion</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-4 margenFactura">
+        <!-- <label for="exampleFormControlInput1">Numero de Retencion</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group margenFactura" style="width: 47%;">
+        <!-- <label for="exampleFormControlInput1">Periodo Fiscal</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group margenFactura" style="width: 98.7%;">
+        <label for="exampleFormControlInput1">Periodo Fiscal</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <label class="col-12" for="exampleFormControlInput1" style="margin-left: 0.5%;">Garante: </label>
+    
+      <div class="form-group col-6 margenFactura" >
+        <!-- <label for="exampleFormControlInput1">Fecha de Retencion</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-3" style="width: 24%;">
+        <!-- <label for="exampleFormControlInput1">Numero de Retencion</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group margenFactura" style="width: 24%;">
+        <!-- <label for="exampleFormControlInput1">Periodo Fiscal</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+    </div>
+
+
+    <div style="width: 0.1%;"></div>
+    
+    <!-- <div style="width: 30px;"></div> -->
+
+    <div style="border: 1px grey solid; padding-bottom: 1%; width: 49.5%; margin-left: 0;" class="row">
+      <!-- <label class="col-12" for="exampleFormControlInput1" style="margin-left: 0.5%;">Datos de Cliente: </label> -->
+    
+      <div class="form-group col-4 margenFactura" >
+        <label for="exampleFormControlInput1">Fecha de Retencion</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-3 margenFactura">
+        <label for="exampleFormControlInput1">Fecha</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-3 margenFactura">
+        <label for="exampleFormControlInput1">Caja</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      
+
+      <!-- <label class="col-12" for="exampleFormControlInput1" style="margin-left: 0.5%;">Datos de Cliente: </label> -->
+      <label for="exampleFormControlInput1" class="col-4">Fecha de Retencion</label>
+      <label for="exampleFormControlInput1" class="col-4">Tipo de Documento</label>
+      <!-- <label for="exampleFormControlInput1" class="col-4"></label> -->
+    
+      <div class="form-group col-4 margenFactura" >
+        <!-- <label for="exampleFormControlInput1">Fecha de Retencion</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      
+
+      <div class="form-group col-3 margenFactura">
+        <!-- <label for="exampleFormControlInput1">Tipo de Documento</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-3 margenFactura">
+        <!-- <label for="exampleFormControlInput1"></label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      
+      <button style="background-color: #5A6B88; border: 0; margin-left: 4%;" type="submit" class="btn btn-primary col-1 "><span class="icon-magnifying-glass"></span></button>
+
+
+      <label class="col-4" for="exampleFormControlInput1" style="margin-left: 0.5%;">Datos de Cliente: </label>
+      <label class="col-6" for="exampleFormControlInput1" style="margin-left: 0.5%;">Datos de Cliente: </label>
+    
+      <div class="form-group col-4 margenFactura" >
+        <!-- <label for="exampleFormControlInput1">Fecha de Retencion</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group col-3 margenFactura">
+        <!-- <label for="exampleFormControlInput1">Numero de Retencion</label> -->
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+
+
+    </div>
+
+
+
+  
+
+
+
+
+<table class="default" style="background-color: #D9D9D9; border: #D9D9D9 10px solid; margin: 1% 0 1% 0;">
+
+  <tr>
+    <td>DESP</td>
+    <td>CODIGO</td>
+    <td>EMP</td>
+    <td style="width: 30%;">PRODUCTO</td>
+    <td>%CRED</td>
+    <td>P.UNITARIO</td>
+    <td>BODEGA</td>
+    <td>CANTIDAD</td>
+    <td>BONO</td>
+    <td>DESC%</td>
+    <td>TOTAL+IVA</td>
+  </tr>
+
+  <tr style="background-color: rgb(237, 237, 237);">
+    <td>DESP</td>
+    <td>1234567899122</td>
+    <td>UND</td>
+    <td>*ARTICULO DE VENTA 1</td>
+    <td>0%</td>
+    <td>P.UNITARIO</td>
+    <td>BODEGA 1</td>
+    <td>5</td>
+    <td>0</td>
+    <td>10%</td>
+    <td>5.50</td>
+  </tr>
+
+  <tr style="height: 10rem; background-color: white; border: #D9D9D9 10px solid;">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+
+  </tr>
+
+</table>
+
+
+    <!-- <div class="form-group col-2">
+      <label for="exampleFormControlInput1">Periodo Fiscal</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div>
+
+    <div class="form-group col-2">
+      <label for="exampleFormControlInput1">Autorizacion Retencion</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+    </div> -->
+
+
+      
+      <div class="row">
+
+        <div class="col-8">
+          <!-- <div class="form-group col-3 row"> -->
+            <!-- <label class="col-12" for=""></label> -->
+            <button id="btnBuscar" type="submit" class="btn btn-primary" style="background-color: #475154; width: 32%;"><span class="icon-magnifying-glass"> Agregar Productos</button>
+            <button id="btnBuscar" type="submit" class="btn btn-primary" style="background-color: #475154; width: 20%;">Agregar Cajon</button>
+            <button id="btnBuscar" type="submit" class="btn btn-primary" style="background-color: #475154; width: 32%;">Agregar Documento</button>
+            <!-- <button id="btnBuscar" type="submit" class="btn btn-primary" style="background-color: #B16868; width: 6%;">XX</button> -->
+            <button style="background-color: #B16868; border: 0;" id="" type="submit" class="btn btn-primary col-1 "><span class="icon-trash"></span></button>
+          <!-- </div> -->
+
+          <div class="row">
+            <div class="form-group col-6 margenFactura" >
+              <label for="exampleFormControlInput1">Observacion</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+            </div>
+      
+            <div class="form-group col-4 margenFactura">
+              <label for="exampleFormControlInput1">Copiar Desde</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+            </div>
+            
+          </div>
+
+          <button id="btnBuscar" type="submit" class="btn btn-primary" style="background-color: #0095FF; width: 47%; margin-top: 1.5%;">GUARDAR REGISTRO</button>
+
+        </div>
+        
+
+
+        <div style="border: 1px grey solid; padding-bottom: 1%;" class="row col-4">
+          <!-- <label class="col-12" for="exampleFormControlInput1" style="margin-left: 0.5%;">Datos de Cliente: </label> -->
+        
+          <div class="form-group col-4" >
+            <label for="exampleFormControlInput1">Subtotal 0%</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+    
+          <div class="form-group col-4 ">
+            <label for="exampleFormControlInput1">Subtotal 12%</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+    
+          <div class="form-group col-4 ">
+            <label for="exampleFormControlInput1">ICE</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+    
+          <div class="form-group col-4" >
+            <label for="exampleFormControlInput1">Subtotal 0%</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+    
+          <div class="form-group col-4 ">
+            <label for="exampleFormControlInput1">Subtotal 12%</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+    
+          <div class="form-group col-4 ">
+            <label for="exampleFormControlInput1">ICE</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+
+          <div class="form-group col-4" >
+            <!-- <label for="exampleFormControlInput1">Subtotal 0%</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=""> -->
+          </div>
+    
+          <div class="form-group col-8 ">
+            <label for="exampleFormControlInput1">TOTAL A PAGAR </label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+          </div>
+    
+
+    
+        </div>
+
+      </div>
+
+  </form>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row" id="divInventario" style="justify-content: center; display: none;">
+    
+  <!-- <div style="width: 20px;"></div> -->
+<form class="col-11 row margenFactura">
+  <!-- <div class="row col-12"> -->
+
+      <div class="row" style="width: 100%;">
+
+        <div class="form-group" style="width: 10%;" >
+          <label for="exampleFormControlInput1">ID</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+
+        <div class="form-group" style="width: 10%;" >
+          <label for="exampleFormControlInput1">Clase</label>
+          <select class="form-select" aria-label="Default select example">
+            <option value="">Producto</option>
+        </select>
+        </div>
+
+        <div class="form-group" style="width: 10%;" >
+          <label for="exampleFormControlInput1">Id Cat</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+
+        <div class="form-group" style="width: 30%;" >
+          <label for="exampleFormControlInput1">Categoria</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+
+        <div class="form-group" style="width: 6%;" >
+          <p></p>
+          <button style="background-color: #5A6B88; border: 0; width: 100%; height: 37px; margin-top: 7px;" type="submit"
+          class="btn btn-primary"><span class="icon-magnifying-glass"></span></button>
+        </div>
+
+        <div class="form-group" style="width: 17%;" >
+          <label for="exampleFormControlInput1">Stock/Bodega 1</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+
+        <div class="form-group" style="width: 17%;" >
+          <label for="exampleFormControlInput1">Stock Total</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+
+
+
+
+    </div>
+
+
+
+
+      <div class="col-12 row">
+        <div class="form-group col-5" >
+          <label for="exampleFormControlInput1">Nombre del Producto o Servicio</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+
+        <div class="form-group col-5">
+          <label for="exampleFormControlInput1">Detalle del Producto o Servicio</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+
+        <div class="form-group col-2" >
+          <label for="exampleFormControlInput1">Presentacion</label>
+          <select class="form-select" aria-label="Default select example">
+            <option value="">Frasco</option>
+        </select>
+        </div>
+
+      </div>
+
+
+      <div class="row" style="width: 100%;">
+
+        <div class="form-group" style="width: 15%;" >
+          <label for="exampleFormControlInput1">Aplica Iva</label>
+          <select class="form-select" aria-label="Default select example">
+            <option value="">Producto</option>
+        </select>
+        </div>
+
+        <div class="form-group" style="width: 20%;" >
+          <label for="exampleFormControlInput1">Aplica I.C.E</label>
+          <select class="form-select" aria-label="Default select example">
+            <option value="">Producto</option>
+        </select>
+        </div>
+
+        <div class="form-group" style="width: 15%;" >
+          <label for="exampleFormControlInput1">Fecha Expira</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+
+        <div class="form-group" style="width: 15%;" >
+          <label for="exampleFormControlInput1">Percha</label>
+          <select class="form-select" aria-label="Default select example">
+            <option value="">Producto</option>
+        </select>
+        </div>
+
+
+
+        <div class="form-group" style="width: 10%;" >
+          <label for="exampleFormControlInput1">Id Prov</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+
+        <div class="form-group" style="width: 19%;" >
+          <label for="exampleFormControlInput1">Proveedor</label>
+          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+        </div>
+
+
+        <div class="form-group" style="width: 6%;" >
+          <p></p>
+          <button style="background-color: #5A6B88; border: 0; width: 100%; height: 37px; margin-top: 7px;" type="submit"
+          class="btn btn-primary"><span class="icon-magnifying-glass"></span></button>
+        </div>
+
+    </div>
+
+
+    <div class="row" style="width: 100%;">
+
+
+
+      <div class="form-group" style="width: 14%;" >
+        <label for="exampleFormControlInput1">Ultima Compra</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+      <div class="form-group" style="width: 14%;" >
+        <label for="exampleFormControlInput1">Ultimo Precio S.I</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+
+      <div class="form-group" style="width: 14%;" >
+        <label for="exampleFormControlInput1">Ultimo Descuento</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+
+      <div class="form-group" style="width: 14%;" >
+        <label for="exampleFormControlInput1">Ultima Bonificacion</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+
+      <div class="form-group" style="width: 14%;" >
+        <label for="exampleFormControlInput1">Stock Min/Bodega</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+
+      <div class="form-group" style="width: 14%;" >
+        <label for="exampleFormControlInput1">Stock Max/Bodega</label>
+        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+      </div>
+
+
+      <div class="form-group" style="width: 16%;" >
+        <label for="exampleFormControlInput1">Aplica Iva</label>
+        <select class="form-select" aria-label="Default select example">
+          <option value="">Producto</option>
+      </select>
+      </div>
+
+      
+
+    </div>
+
+<!--  -->
+    <div style="margin-top: 10px;" class="row col-12">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a id="aSec1" class="nav-link active" aria-current="page" href="#" onclick="mostrarSec1()">PRESENTACIONES Y PRECIOS</a>
+        </li>
+        <li class="nav-item">
+          <a id="aSec2" class="nav-link" href="#" onclick="mostrarSec2()">ESCALAS BONIF/DESC</a>
+        </li>
+        <li class="nav-item">
+          <a id="aSec3" class="nav-link" href="#" onclick="mostrarSec3()">LOTES</a>
+        </li>
+        <li class="nav-item">
+          <a id="aSec4" class="nav-link" href="#" onclick="mostrarSec4()">ATRIBUTOS</a>
+        </li>
+
+      </ul>
+
+      <div id="sec1">
+        <table class="default"
+        style="background-color: #D9D9D9; border: #D9D9D9 10px solid; margin: 1% 0 1% 0; width: 100%;">
+
+        <tr class="trTabla">
+            <td>Todos</td>
+            <td>CODIGO</td>
+            <td>EMP</td>
+            <td>FACTOR</td>
+            <td>P.Costo</td>
+            <td>P.C + IVA</td>
+            <td>Util%</td>
+            <td>PVP1</td>
+            <td>Util%</td>
+            <td>PVP2</td>
+            <td>Rango</td>
+            <td>PVP3</td>
+            <td>Rango</td>
+            <td>PVP4</td>
+            <td>Rango</td>
+            <td>PVP5</td>
+            <td>Rango</td>
+        </tr>
+
+        <tr style="background-color: rgb(237, 237, 237);">
+            <td>1234567899122</td>
+            <td>CODIGO</td>
+            <td>UND</td>
+            <td>1</td>
+            <td>0.0000</td>
+            <td>0.0000</td>
+            <td>15%</td>
+            <td>20.00</td>
+            <td>16%</td>
+            <td>20.00</td>
+            <td>6.00</td>
+            <td>39.00</td>
+            <td>12.00</td>
+            <td>40.00</td>
+            <td>18</td>
+            <td>40.00</td>
+            <td>30</td>
+        </tr>
+
+        <tr style="height: 10rem; background-color: white; border: #D9D9D9 10px solid;">
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+    </table>
+      </div>
+
+      <div id="sec2" style="display: none; width: 100%;" class="row">
+        <div style="width: 100%;" class="row">
+          <div class="form-group" style="width: 12%;">
+              <label>Tipo</label>
+              <select class="form-select" aria-label="Default select example">
+                  <option value="">Descuento</option>
+              </select>
+          </div>
+          <div class="form-group" style="width: 12%;">
+              <label>A partir de</label>
+              <input type="text" class="form-control" placeholder="">
+          </div>
+          <div class="form-group" style="width: 12%;">
+              <label>Empaque</label>
+              <select class="form-select" aria-label="Default select example">
+                  <option value="">UND</option>
+              </select>
+          </div>
+          <div class="form-group" style="width: 12%;">
+              <label>Desc. o Bonif.</label>
+              <input type="text" class="form-control" placeholder="">
+          </div>
+
+          <div class="form-group" style="width: 12%;">
+              <label>Fecha Inicio</label>
+              <input type="text" class="form-control" placeholder="">
+          </div>
+
+          <div class="form-group" style="width: 12%;">
+              <label>Fecha Fin</label>
+              <input type="text" class="form-control" placeholder="">
+          </div>
+
+          
+          <div class="form-group" style="width: 10%;">
+            <label>Los Dias</label>
+              <select class="form-select" aria-label="Default select example">
+                  <option value="">LUNES</option>
+              </select>
+          </div>
+
+
+          <div class="form-group" style="width: 15%;">
+            <label></label>
+            <a class="btn btn-primary"
+            href="#seccion4" aria-controls="seccion4" data-toggle="tab" role="tab"
+            style="background-color:#666666; font-size: 14px; width: 100%; border: 0; margin-left: 15px;">+ Agregar</a>
+        </div>
+      </div>
+
+      <table class="default"
+      style="background-color: #D9D9D9; border: #D9D9D9 10px solid; margin: 4% 0 1% 0; width: 100%;">
+
+      <tr class="trTabla">
+          <td>Tipo</td>
+          <td>Unidad</td>
+          <td>Desc. o Bonif.</td>
+          <td>Fecha Inicio</td>
+          <td>Fecha Fin</td>
+          <td>Dias</td>
+      </tr>
+
+      <tr style="background-color: rgb(237, 237, 237);">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+
+      <tr style="height: 3rem; background-color: white; border: #D9D9D9 10px solid;">
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+
+  </table>
+      </div>
+
+      <div id="sec3" style="display: none; width: 100%;" class="row">
+        <div style="width: 100%;" class="row">
+          <div class="form-group" style="width: 20%;">
+              <label>Codigo</label>
+              <input type="text" class="form-control" placeholder="">
+          </div>
+          <div class="form-group" style="width: 20%;">
+              <label>Cantidad Disponible</label>
+              <input type="text" class="form-control" placeholder="">
+          </div>
+
+          
+          <div class="form-group" style="width: 20%;">
+              <label>Fecha Vencimiento</label>
+              <input type="text" class="form-control" placeholder="">
+          </div>
+
+          <div class="form-group" style="width: 15%;">
+            <label></label>
+            <a class="btn btn-primary"
+            href="#seccion4" aria-controls="seccion4" data-toggle="tab" role="tab"
+            style="background-color:#666666; font-size: 14px; width: 100%; border: 0; margin-left: 15px;">+ Agregar</a>
+        </div>
+      </div>
+
+      <table class="default"
+      style="background-color: #D9D9D9; border: #D9D9D9 10px solid; margin: 2% 0 1% 0; width: 100%;">
+
+      <tr class="trTabla">
+          <td>Codigo</td>
+          <td>Cantidad Disponible</td>
+          <td>Fecha Vencimiento</td>
+      </tr>
+
+      <tr style="background-color: rgb(237, 237, 237);">
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+
+      <tr style="height: 3rem; background-color: white; border: #D9D9D9 10px solid;">
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+
+  </table>
+      </div>
+
+      <div id="sec4" style="display: none; width: 100%;" class="row">
+        <div style="width: 100%;" class="row">
+          <div class="form-group" style="width: 40%;">
+              <label>Atributo</label>
+              <input type="text" class="form-control" placeholder="">
+          </div>
+          <div class="form-group" style="width: 40%;">
+              <label>Valor o Descripcion</label>
+              <input type="text" class="form-control" placeholder="">
+          </div>
+
+          <div class="form-group" style="width: 15%;">
+            <label></label>
+            <a class="btn btn-primary"
+            href="#seccion4" aria-controls="seccion4" data-toggle="tab" role="tab"
+            style="background-color:#666666; font-size: 14px; width: 100%; border: 0; margin-left: 15px;">+ Agregar</a>
+        </div>
+
+
+      </div>
+
+      <table class="default"
+      style="background-color: #D9D9D9; border: #D9D9D9 10px solid; margin: 2% 0 1% 0; width: 100%;">
+
+      <tr class="trTabla">
+          <td>Atributo</td>
+          <td>Valor o Descripcion</td>
+      </tr>
+
+      <tr style="background-color: rgb(237, 237, 237);">
+          <td></td>
+          <td></td>
+      </tr>
+
+      <tr style="height: 3rem; background-color: white; border: #D9D9D9 10px solid;">
+          <td></td>
+          <td></td>
+      </tr>
+
+  </table>
+              </div>
+
+
+      <script>
+        function mostrarSec1() {
+          ocultarSec()
+          document.getElementById('sec1').style.display = 'flex';
+          document.getElementById('aSec1').className = "nav-link active";
+          // document.getElementById('sec1').innerHTML = "<p>1</p>";
+
+        }
+
+        function mostrarSec2() {
+          ocultarSec()
+          document.getElementById('sec2').style.display = 'flex';
+          document.getElementById('aSec2').className = "nav-link active";
+          // document.getElementById('sec2').innerHTML = "<p>2</p>";
+        }
+
+        function mostrarSec3() {
+          ocultarSec()
+          document.getElementById('sec3').style.display = 'flex';
+          document.getElementById('aSec3').className = "nav-link active";
+          // document.getElementById('sec3').innerHTML = "<p>3</p>";
+        }
+
+        function mostrarSec4() {
+          ocultarSec()
+          document.getElementById('sec4').style.display = 'flex';
+          document.getElementById('aSec4').className = "nav-link active";
+          // document.getElementById('sec4').innerHTML = "<p>3</p>";
+        }
+
+        function ocultarSec() {
+          document.getElementById('sec1').style.display = 'none';
+          document.getElementById('aSec1').className = "nav-link";
+
+          document.getElementById('sec2').style.display = 'none';
+          document.getElementById('aSec2').className = "nav-link";
+
+          document.getElementById('sec3').style.display = 'none';
+          document.getElementById('aSec3').className = "nav-link";
+
+          document.getElementById('sec4').style.display = 'none';
+          document.getElementById('aSec4').className = "nav-link";
+        }
+      </script>
+
+
+
+    </div>
+<!-- / -->
+
+
+
+
+
+
+
+    </form>
+
+    
+
+  </div>
+
+
+  
+
+
+
+  </main>
+
+
+  <!-- <span id="pestaniaDashboard" class="pestania" onclick="mostrarDashboard()">Dashboard</span> <span id="pestaniaDashboardX" class="pestaniaX" onclick="cerrarDashboard()" style="margin-left: 15px;">X</span> -->
+
+  <script>
+
+    function mostrarDashboard() {
+      if (document.getElementById('pestaniaDashboard') == null) {
+        ocultarTodasLasVentanas()
+        document.getElementById('mainDashboard').style.display = 'flex'; //block
+        document.getElementById('divPestania').innerHTML += '<span id="pestaniaDashboard" class="pestania" onclick="mostrarDashboard()">Dashboard</span><span id="pestaniaDashboardX" class="pestaniaX" onclick="cerrarDashboard()"">X</span> ';
+      }
+      document.getElementById('mainDashboard').style.display = 'flex';
+    }
+
+    function cerrarDashboard() {
+      document.getElementById('mainDashboard').style.display = 'none';
+      document.getElementById('pestaniaDashboard').innerHTML = "";
+      document.getElementById('pestaniaDashboard').className = "";
+      document.getElementById('pestaniaDashboard').id = "";
+      document.getElementById('pestaniaDashboardX').innerHTML = "";
+      document.getElementById('pestaniaDashboardX').className = "";
+      document.getElementById('pestaniaDashboardX').id = "";
+      document.getElementById('mainDashboard').style.display = 'none';
+    }
+
+
+
+
+    
+
+    function mostrarCategoria() {
+      if (document.getElementById('pestaniaCategoria') == null) {
+        document.getElementById('divPestania').innerHTML += '<span id="pestaniaCategoria" class="pestania" onclick="mostrarCategoria()">Categoria</span><span id="pestaniaCategoriaX" class="pestaniaX" onclick="cerrarCategoria()"">X</span> ';
+      }
+      ocultarTodasLasVentanas()
+      document.getElementById('mainCategoria').style.display = 'flex';
+    }
+
+    function cerrarCategoria() {
+      document.getElementById('mainCategoria').style.display = 'none';
+      document.getElementById('pestaniaCategoria').innerHTML = "";
+      document.getElementById('pestaniaCategoria').className = "";
+      document.getElementById('pestaniaCategoria').id = "";
+      document.getElementById('pestaniaCategoriaX').innerHTML = "";
+      document.getElementById('pestaniaCategoriaX').className = "";
+      document.getElementById('pestaniaCategoriaX').id = "";
+      document.getElementById('mainCategoria').style.display = 'none';
+    }
+
+
+    function mostrarFactura() {
+      if (document.getElementById('pestaniaFactura') == null) {
+        document.getElementById('divPestania').innerHTML += '<span id="pestaniaFactura" class="pestania" onclick="mostrarFactura()">Facturacion</span><span id="pestaniaFacturaX" class="pestaniaX" onclick="cerrarFactura()"">X</span> ';
+      }
+      ocultarTodasLasVentanas()
+      document.getElementById('divFactura').style.display = 'flex';
+    }
+
+    function cerrarFactura() {
+      document.getElementById('divFactura').style.display = 'none';
+      document.getElementById('pestaniaFactura').innerHTML = "";
+      document.getElementById('pestaniaFactura').className = "";
+      document.getElementById('pestaniaFactura').id = "";
+      document.getElementById('pestaniaFacturaX').innerHTML = "";
+      document.getElementById('pestaniaFacturaX').className = "";
+      document.getElementById('pestaniaFacturaX').id = "";
+      document.getElementById('divFactura').style.display = 'none';
+    }
+
+
+
+
+    function mostrarInventario() {
+      if (document.getElementById('pestaniaInventario') == null) {
+        document.getElementById('divPestania').innerHTML += '<span id="pestaniaInventario" class="pestania" onclick="mostrarInventario()">Inventario</span><span id="pestaniaInventarioX" class="pestaniaX" onclick="cerrarInventario()"">X</span> ';
+      }
+      ocultarTodasLasVentanas()
+      document.getElementById('divInventario').style.display = 'flex';
+    }
+
+    function cerrarInventario() {
+      document.getElementById('divInventario').style.display = 'none';
+      document.getElementById('pestaniaInventario').innerHTML = "";
+      document.getElementById('pestaniaInventario').className = "";
+      document.getElementById('pestaniaInventario').id = "";
+      document.getElementById('pestaniaInventarioX').innerHTML = "";
+      document.getElementById('pestaniaInventarioX').className = "";
+      document.getElementById('pestaniaInventarioX').id = "";
+      document.getElementById('divInventario').style.display = 'none';
+    }
+
+
+
+    
+
+
+    function mostrarGrupo() {
+      if (document.getElementById('pestaniaGrupo') == null) {
+        document.getElementById('divPestania').innerHTML += '<span id="pestaniaGrupo" class="pestania" onclick="mostrarGrupo()">Grupo</span><span id="pestaniaGrupoX" class="pestaniaX" onclick="cerrarGrupo()"">X</span> ';
+      }
+      ocultarTodasLasVentanas()
+      document.getElementById('divGrupo').style.display = 'flex';
+    }
+
+    function cerrarGrupo() {
+      document.getElementById('divGrupo').style.display = 'none';
+      document.getElementById('pestaniaGrupo').innerHTML = "";
+      document.getElementById('pestaniaGrupo').className = "";
+      document.getElementById('pestaniaGrupo').id = "";
+      document.getElementById('pestaniaGrupoX').innerHTML = "";
+      document.getElementById('pestaniaGrupoX').className = "";
+      document.getElementById('pestaniaGrupoX').id = "";
+      document.getElementById('divGrupo').style.display = 'none';
+    }
+
+
+
+    function mostrarGuiaRemision() {
+      if (document.getElementById('pestaniaGuiaRemision') == null) {
+        document.getElementById('divPestania').innerHTML += '<span id="pestaniaGuiaRemision" class="pestania" onclick="mostrarGuiaRemision()">Guia de Remision</span><span id="pestaniaGuiaRemisionX" class="pestaniaX" onclick="cerrarGuiaRemision()"">X</span> ';
+      }
+      ocultarTodasLasVentanas()
+      document.getElementById('divGuiaRemision').style.display = 'flex';
+    }
+
+    function cerrarGuiaRemision() {
+      document.getElementById('divGuiaRemision').style.display = 'none';
+      document.getElementById('pestaniaGuiaRemision').innerHTML = "";
+      document.getElementById('pestaniaGuiaRemision').className = "";
+      document.getElementById('pestaniaGuiaRemision').id = "";
+      document.getElementById('pestaniaGuiaRemisionX').innerHTML = "";
+      document.getElementById('pestaniaGuiaRemisionX').className = "";
+      document.getElementById('pestaniaGuiaRemisionX').id = "";
+      document.getElementById('divGuiaRemision').style.display = 'none';
+    }
+
+
+
+
+    function mostrarRetencion() {
+      if (document.getElementById('pestaniaRetencion') == null) {
+        document.getElementById('divPestania').innerHTML += '<span id="pestaniaRetencion" class="pestania" onclick="mostrarRetencion()">Retencion</span><span id="pestaniaRetencionX" class="pestaniaX" onclick="cerrarRetencion()"">X</span> ';
+      }
+      ocultarTodasLasVentanas()
+      document.getElementById('divRetencion').style.display = 'flex';
+    }
+
+    function cerrarRetencion() {
+      document.getElementById('divRetencion').style.display = 'none';
+      document.getElementById('pestaniaRetencion').innerHTML = "";
+      document.getElementById('pestaniaRetencion').className = "";
+      document.getElementById('pestaniaRetencion').id = "";
+      document.getElementById('pestaniaRetencionX').innerHTML = "";
+      document.getElementById('pestaniaRetencionX').className = "";
+      document.getElementById('pestaniaRetencionX').id = "";
+      document.getElementById('divRetencion').style.display = 'none';
+    }
+
+
+
+
+
+
+    
+
+    function ocultarTodasLasVentanas() {
+      document.getElementById('mainDashboard').style.display = 'none';
+      document.getElementById('mainCategoria').style.display = 'none';
+      document.getElementById('divGrupo').style.display = 'none';
+      document.getElementById('divGuiaRemision').style.display = 'none';
+      document.getElementById('divRetencion').style.display = 'none';
+      document.getElementById('divFactura').style.display = 'none';
+      document.getElementById('divInventario').style.display = 'none';
+    }
+  </script>
+</body>
+</html>

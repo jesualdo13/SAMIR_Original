@@ -1,0 +1,111 @@
+$active-color: #ff6a00;
+$complete-color: #0095ff;
+$inactive-color: #eee;
+
+.app-steeper{
+
+}
+
+.app-stepper-header{
+  // display: flex;
+  // justify-content: space-around;
+  display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  // grid-gap: 1rem;
+  // margin-bottom: 1rem;
+
+  .step-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 10001;
+    .step-image{
+      width: 60px;
+      height: 60px;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $inactive-color;
+      color: #ccc;
+      // position: relative;
+      // z-index: 10001;
+    }
+    .step-title{
+      margin-top: 10px;
+      font-weight: bold;
+      color: #ccc;
+    }
+    &.active{
+      .step-image{ background-color: $active-color; color: #ffffff; }
+      .step-title{ color: $active-color; }
+      &:not(:first-child){
+        ::before{ background-color: $active-color; }
+      }
+      &:not(:last-child){
+        ::after{ background-color: $active-color; }
+      }
+    }
+    &.complete{
+      .step-image{ background-color: $complete-color; color: #ffffff; }
+      .step-title{ color: $complete-color; }
+      &:not(:first-child){
+        ::before{ background-color: $complete-color; }
+      }
+      &:not(:last-child){
+        ::after{ background-color: $complete-color; }
+      }
+    }
+    &:not(:first-child){
+      ::before{
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translate(0%, -180%);
+        width: 50%;
+        height: 10px;
+        background-color: $inactive-color;
+        z-index: -1;
+      }
+    }
+    &:not(:last-child){
+      ::after{
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: 0%;
+        transform: translate(0, -180%);
+        width: 50%;
+        height: 10px;
+        background-color: $inactive-color;
+        z-index: -1;
+      }
+    }
+  }
+}
+
+.app-stepper-body{
+  margin-bottom: 20px;
+}
+
+.app-stepper-footer-actions{
+  display: flex;
+  justify-content: space-between;
+}
+.app-steeper-action{
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+  &:disabled{
+    color: #CCC;
+    cursor: not-allowed;
+  }
+}

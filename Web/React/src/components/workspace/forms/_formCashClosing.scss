@@ -1,0 +1,32 @@
+.form-cash-closing {
+  .table-container {
+    margin-bottom: 2rem;
+  }
+
+  @media screen and (max-width: 900px) {
+    .row .grid.three {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .row .grid.four {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media screen and (max-width: 800px) {
+    .row .grid.three {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+  @media screen and (max-width: 460px) {
+    .action-btn {
+      margin-top: 0;
+    }
+
+    .row .grid.four {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .row .grid.three .grid.two {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

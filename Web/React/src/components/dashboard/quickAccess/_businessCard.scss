@@ -1,0 +1,256 @@
+.business-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: 100%;
+  min-width: 22rem;
+  background-color: var(--white);
+  border: 1px solid var(--light-gray);
+  border-radius: 8px;
+
+  margin-right: 1rem;
+
+  box-shadow: 0 0.25rem 0.25rem var(--shadow-text);
+
+  .short-name {
+    width: 100%;
+    height: 2.5rem;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 0 1rem;
+
+    border-bottom: 1px solid var(--light-gray);
+
+    p {
+      font: var(--text-sm);
+      color: var(--text);
+    }
+  }
+
+  .info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
+
+    padding: 1rem;
+
+    .avatar {
+      height: 5rem;
+      width: 5rem;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-shrink: 0;
+
+      border-radius: 50%;
+
+      overflow: hidden;
+
+      img {
+        height: 100%;
+      }
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      width: 100%;
+
+      padding: 0 1rem;
+
+      strong {
+        font: var(--text-sm);
+        font-weight: 600;
+        color: var(--text);
+
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font: var(--text-sm);
+        color: var(--placeholder);
+        font-weight: 400;
+
+        width: 100%;
+      }
+    }
+  }
+
+  .extra {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 0 1rem;
+    width: 100%;
+
+    margin-bottom: 1rem;
+
+    .location {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+
+      font: var(--text-sm);
+      color: var(--placeholder);
+      font-weight: 400;
+
+      width: 100%;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--light-gray);
+      margin-bottom: 0.75rem;
+
+      svg {
+        height: 1rem;
+        fill: var(--text);
+
+        margin-right: 0.5rem;
+      }
+
+      span {
+        font-weight: 400;
+        color: var(--placeholder);
+      }
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      // margin-bottom: 1rem;
+
+      .data {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+
+        font: var(--text-sm);
+        color: var(--placeholder);
+        font-weight: 400;
+
+        width: 100%;
+
+        span {
+          margin-top: 0.25rem;
+          margin-left: 0.25rem;
+          font-weight: 700;
+          color: var(--text);
+        }
+      }
+    }
+  }
+
+  .actions {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    width: 100%;
+    padding: 0 1rem;
+
+    margin-bottom: 1rem;
+
+    .grid {
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1rem;
+      align-items: center;
+      justify-items: center;
+
+      a,
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+
+        padding: 0.5rem 1.25rem;
+        background-color: var(--white);
+        border: 1px solid var(--light-gray);
+        border-radius: 4px;
+        color: var(--text);
+
+        font: var(--text-sm);
+        font-weight: 500;
+        cursor: pointer;
+
+        svg {
+          flex-shrink: 0;
+          height: 1.25rem;
+
+          margin-left: 0.5rem;
+          fill: var(--text);
+        }
+
+        &.highlighted {
+          background-color: #ff6a00;
+          border: none;
+
+          color: var(--white);
+          font-weight: 500;
+
+          text-transform: uppercase;
+
+          svg {
+            fill: var(--white);
+          }
+
+          &.clone {
+            background-color: var(--green);
+          }
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 400px) {
+    min-width: 2rem;
+
+    .info .avatar {
+      height: 3.5rem;
+      width: 3.5rem;
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    .info {
+      padding: 1rem 0.75rem;
+
+      .avatar {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+
+      .text {
+        padding: 0 0.75rem;
+      }
+    }
+
+    .extra,
+    .actions {
+      padding: 0 0.5rem;
+
+      .grid {
+        gap: 0.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,229 @@
+#quick-access-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: 100%;
+
+  .summary {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+
+    border-bottom: 1px solid var(--light-gray);
+
+    .summary-card {
+      display: grid;
+      grid-template-columns: 0.1fr 0.9fr;
+      align-items: center;
+      justify-items: start;
+
+      padding: 1.5rem;
+
+      border-radius: 8px;
+      background-color: var(--white);
+
+      box-shadow: 0 0.25rem 0.25rem var(--shadow-text);
+
+      border: 1px solid var(--gray);
+
+      .left {
+        margin-right: 1rem;
+
+        svg {
+          height: 2rem;
+          fill: var(--blue);
+        }
+      }
+
+      .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        strong,
+        span {
+          color: var(--text);
+        }
+
+        strong {
+          font: var(--text-lg);
+          font-weight: 500;
+          margin-bottom: 0.25rem;
+        }
+
+        span {
+          font: var(--text-md);
+        }
+      }
+
+      &.blue,
+      &.purple {
+        .left svg {
+          fill: var(--white);
+        }
+
+        .right {
+          strong,
+          span {
+            color: var(--white);
+          }
+        }
+      }
+
+      &.blue {
+        border-color: var(--blue);
+        background-color: var(--blue);
+      }
+
+      &.purple {
+        border-color: var(--purple);
+        background-color: var(--purple);
+      }
+    }
+  }
+
+  & > .options {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+
+    width: 100%;
+
+    strong {
+      font: var(--text-md);
+      font-weight: 600;
+      color: var(--text);
+
+      margin-right: 1.5rem;
+    }
+
+    .buttons {
+      display: flex;
+
+      button,
+      a {
+        font-weight: 400;
+
+        width: max-content;
+        margin-right: 1rem;
+        height: 36px;
+
+        padding: 0.5rem 0.75rem;
+        border-radius: 4px;
+
+        font: var(--text-sm);
+
+        svg {
+          margin-left: 0.5rem;
+          height: 1.25rem;
+          fill: var(--white);
+        }
+      }
+    }
+  }
+
+  .business-profiles {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+
+  &.shortened .business-profiles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (max-width: 1260px) {
+    .business-profiles {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 1164px) {
+    .summary {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 1042px) {
+    &.shortened .business-profiles {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 862px) {
+    .business-profiles {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &.shortened .summary {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &.shortened > .options {
+      flex-direction: column;
+      align-items: flex-start;
+
+      & > strong {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 806px) {
+    .summary {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 752px) {
+    &.shortened > .options .buttons {
+      flex-direction: column;
+
+      a {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 668px) {
+    & > .options {
+      flex-direction: column;
+      align-items: flex-start;
+
+      & > strong {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 570px) {
+    .summary .summary-card .right {
+      strong {
+        font: var(--text-md);
+        font-weight: 500;
+      }
+
+      span {
+        font: var(--text-sm);
+      }
+    }
+
+    & > .options .buttons {
+      flex-direction: column;
+
+      a {
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}

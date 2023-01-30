@@ -1,0 +1,57 @@
+{
+  "name": "samirapp",
+  "version": "0.1.0",
+  "private": true,
+  "author": {
+    "name": "Franklin Gil",
+    "email": "example@test.com"
+  },
+  "description": "Electron app",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "jspdf": "^2.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.1",
+    "react-scripts": "5.0.1",
+    "react-toastify": "^9.1.1",
+    "sass": "^1.55.0"
+  },
+  "main": "main.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "start:web": "env-cmd -f ./.env.web react-scripts start",
+    "build:web": "env-cmd -f ./.env.web react-scripts build",
+    "build:desktop": "env-cmd -f ./.env.desktop react-scripts build",
+    "dev": "electron main.js",
+    "forge:start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.3",
+    "@electron-forge/maker-deb": "^6.0.3",
+    "@electron-forge/maker-rpm": "^6.0.3",
+    "@electron-forge/maker-squirrel": "^6.0.3",
+    "@electron-forge/maker-zip": "^6.0.3",
+    "electron": "^21.3.0",
+    "env-cmd": "^10.1.0"
+  }
+}

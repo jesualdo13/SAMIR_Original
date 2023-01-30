@@ -1,0 +1,90 @@
+.loading-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999999;
+
+  width: 100%;
+  min-height: calc(100 * var(--unit));
+
+  background-color: var(--gray-blue);
+
+  .logo {
+    height: 4rem;
+    width: 4rem;
+
+    margin-bottom: 1rem;
+
+    svg {
+      height: 100%;
+      fill: var(--blue);
+    }
+  }
+
+  .loader {
+    width: 80%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    p {
+      font: var(--text-xs);
+      color: var(--white);
+
+      margin-bottom: 0.5rem;
+    }
+
+    .progress {
+      background-color: var(--light-gray);
+
+      height: 0.75rem;
+      width: 100%;
+
+      border-radius: 4px;
+      overflow: hidden;
+
+      position: relative;
+
+      &:after {
+        content: "";
+        height: 0.75rem;
+        width: 100%;
+        display: block;
+
+        position: relative;
+        z-index: 10000000;
+
+        background-color: var(--blue);
+
+        animation: loading 1s ease-in;
+        transform-origin: left center;
+      }
+
+      @keyframes loading {
+        0% {
+          transform: scaleX(0);
+        }
+        100% {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+
+  @media screen and (max-width: 540px) {
+    .loader {
+      align-items: center;
+
+      p {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

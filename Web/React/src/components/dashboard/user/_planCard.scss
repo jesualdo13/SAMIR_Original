@@ -1,0 +1,230 @@
+.plan {
+  border-radius: 8px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: 100%;
+  height: 100%;
+
+  &.active {
+    .header {
+      background-color: var(--blue);
+      border-color: var(--blue);
+
+      .top {
+        strong,
+        span {
+          color: var(--white);
+        }
+      }
+
+      .bottom {
+        p {
+          color: var(--white);
+        }
+      }
+    }
+    .body {
+      border-color: var(--blue);
+    }
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+
+    padding: 1rem;
+    background-color: var(--shadow-text);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px 8px 0 0;
+
+    .top {
+      width: 100%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+
+      margin-bottom: 0.5rem;
+
+      strong {
+        color: var(--text);
+        font: var(--text-lg);
+        font-weight: 500;
+      }
+
+      span {
+        color: var(--text);
+        font: var(--text-sm);
+        text-align: right;
+        margin-left: 1rem;
+        padding-top: 0.125rem;
+        flex-shrink: 0;
+      }
+    }
+
+    .bottom {
+      width: 100%;
+
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      p {
+        font: var(--text-sm);
+        color: var(--text);
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        span {
+          margin-left: 0.25rem;
+
+          border-radius: 4px;
+          padding: 0.25rem;
+          background-color: var(--yellow);
+          color: var(--black);
+          font: var(--text-xs);
+          font-weight: 500;
+        }
+      }
+    }
+  }
+
+  .body {
+    width: 100%;
+    height: 100%;
+
+    font: var(--text-sm);
+    color: var(--placeholder);
+
+    border: 1px solid var(--light-gray);
+    border-top: none;
+    border-radius: 0 0 8px 8px;
+
+    .section {
+      width: 100%;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--light-gray);
+
+      & > span {
+        margin-bottom: 0.5rem;
+        font-weight: 500;
+
+        padding-left: 1rem;
+      }
+
+      &:first-of-type {
+        padding: 0.5rem 0;
+      }
+
+      .limits {
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        .item {
+          width: 100%;
+
+          display: grid;
+          grid-template-columns: 9fr 1fr;
+          padding: 0.5rem 1rem;
+
+          &:hover {
+            background-color: var(--shadow-text);
+          }
+
+          span {
+            font-weight: 600;
+            text-align: right;
+          }
+        }
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        width: 100%;
+        list-style: none;
+
+        max-height: 132px;
+        overflow: auto;
+
+        scrollbar-color: var(--blue) var(--light-gray);
+        scrollbar-width: thin;
+
+        li {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+
+          padding: 0.125rem 1rem;
+
+          svg {
+            height: 1rem;
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+
+    .action {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      height: 68px;
+      padding: 1rem;
+
+      svg {
+        margin-left: 0.5rem;
+        height: 1rem;
+        color: var(--green);
+      }
+
+      button {
+        width: 100%;
+
+        padding: 0.5rem;
+        border: 1px solid var(--gray);
+        border-radius: 4px;
+        background-color: var(--white);
+
+        font: var(--text-sm);
+        font-weight: 500;
+        color: var(--text);
+        cursor: pointer;
+
+        transition-property: background-color, border-color, color;
+        transition-duration: var(--transition);
+        transition-timing-function: ease-in-out;
+
+        &:hover {
+          background-color: var(--blue);
+          color: var(--white);
+          border-color: var(--blue);
+        }
+      }
+    }
+  }
+}

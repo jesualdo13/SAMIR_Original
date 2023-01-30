@@ -1,0 +1,62 @@
+.basic-buttons {
+  display: grid;
+  gap: 1rem;
+
+  &.version-1 {
+    grid-template-columns: 52px 1fr 52px;
+  }
+  &.version-2 {
+    grid-template-columns: 52px 3fr 52px 1fr;
+  }
+  &.version-3 {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  &.version-5 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  margin: 34px 0 3rem;
+
+  button {
+    background-color: var(--blue);
+    color: var(--white);
+    font: var(--text-md);
+    font-weight: 500;
+
+    height: 52px;
+    padding: 0 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    cursor: pointer;
+
+    border: none;
+    border-radius: 8px;
+
+    &.search {
+      background-color: var(--black-blue);
+    }
+    &.delete {
+      background-color: var(--red);
+    }
+    &.clean {
+      background-color: var(--dark-gray);
+    }
+
+    &:hover {
+      opacity: 0.9;
+    }
+    &:active {
+      opacity: 0.7;
+    }
+
+    svg {
+      height: 1.5rem;
+      fill: var(--white);
+      color: var(--white);
+    }
+  }
+}

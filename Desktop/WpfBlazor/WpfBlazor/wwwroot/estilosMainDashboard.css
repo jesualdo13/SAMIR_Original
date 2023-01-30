@@ -1,0 +1,196 @@
+/* #div1 {
+    background-color: rebeccapurple; */
+    /* width: 30%;
+    height: 100%; 
+}*/
+
+*{
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+
+header{
+	width: 100%;
+}
+
+nav {
+    color: white;
+}
+
+.navegacion{
+	width: 100%;
+	/* margin: 30px auto; */
+	background: #0095FF;
+	height: 4rem;
+}
+
+.navegacion ul{
+	list-style: none;
+}
+
+.menu > li{
+	position: relative;
+	display: inline-block;
+    
+}
+
+.menu > li > a{
+	display: block;
+	padding: 0 20px;
+	color: white;
+	font-family: 'Open sans';
+	text-decoration: none;
+}
+
+.menu li a:hover{
+	background-color: #0095FF;
+	transition: all .3s;
+    /* color: black; */
+    
+}
+
+/* Submenu*/
+
+.submenu{
+	position: absolute;
+	background: white;
+    color: black;
+	/* width: 100%; */
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 1.5s;
+}
+
+.submenu li a{
+	display: block;
+	padding: 7px;
+	color: black;
+	font-family: 'Open sans';
+	text-decoration: none;
+}
+
+.menu li:hover .submenu{
+	visibility: visible;
+	opacity: 1;
+}
+
+
+#divDerecha {
+    text-align: right;
+    margin:  0.7% 1% 0 0;
+}
+
+#imgUsuario {
+    width:3%;
+    /* height: 1.9%; */
+    border-radius:80%;
+    /* margin: 5px; */
+    margin: 0 1% 0 1%;
+}
+
+
+
+
+
+
+
+
+#div2 {
+    background-color: red;
+
+}
+
+/* #btnIniciarSesion {
+    width: 100%;
+} */
+
+#mainbtnGuardarCambios {
+    display: flex;
+}
+
+#aRegistrarme {
+    float: right;
+}
+
+#pCopyright {
+    text-align: center;
+}
+
+#mainDashboard {
+    padding: 5% 10% 5% 10%;
+}
+
+form {
+    padding-bottom: 5%;
+}
+
+#btnGuardarCambios {
+    float: right;
+    /* border-right: 50px; */
+    width: 48%;
+}
+
+img {
+    width:90%;
+    height: 30%;
+    border-radius:100%;
+    margin-bottom: 10%;
+}
+
+
+
+#btnBuscar {
+    background-color: gray;
+    border: 0;
+}
+
+
+
+.margenFactura {
+	margin: 0 1% 0 0 ;
+}
+
+
+.pestania {
+    background-color: white;
+    color: black; 
+	padding: 0 0 2px 10px;
+    /* border-left: 10px solid white;
+    border-right: 10px solid white;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%; */
+    margin: 0 0 0 10px;
+	border-top-left-radius: 5px;
+	/* border-top-right-radius: 5px; */
+	float: left;
+}
+
+.pestaniaX {
+    background-color: white;
+    color: black; 
+	padding: 0 10px 2px 0px;
+	border-left: 5px solid white;
+    /* border-left: 10px solid white;
+    border-right: 10px solid white;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%; */
+    margin: 0 0 0 0;
+	/* border-top-left-radius: 5px; */
+	border-top-right-radius: 5px;
+	float: left;
+}
+
+.pestania2 {
+    /* background-color: white;
+    color: black; padding: 0 30px 2px 10px; */
+    /* border-left: 10px solid white;
+    border-right: 10px solid white;
+    border-top-left-radius: 20%;
+    border-top-right-radius: 20%; */
+    margin: 0 5px 0 10px;
+}

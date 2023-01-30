@@ -1,0 +1,45 @@
+#dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  height: auto;
+
+  & > .container {
+    display: flex;
+
+    width: 100%;
+    height: auto;
+    position: relative;
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+
+      width: 100%;
+      height: auto;
+
+      padding: 1rem;
+      background-color: var(--shadow-text);
+
+      & > .copyright {
+        margin: 3rem 0 1rem;
+
+        width: 100%;
+        text-align: center;
+
+        font: var(--text-sm);
+        color: var(--placeholder);
+      }
+    }
+  }
+
+  @media screen and (max-width: 350px) {
+    & > .container .main {
+      padding: 0.5rem;
+    }
+  }
+}

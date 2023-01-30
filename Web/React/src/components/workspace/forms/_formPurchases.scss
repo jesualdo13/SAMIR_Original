@@ -1,0 +1,106 @@
+.form-purchases {
+  .table-container {
+    margin-bottom: 2rem;
+    min-height: 82px;
+
+    .cell {
+      &.header {
+        &:nth-of-type(1),
+        &:nth-of-type(2),
+        &:nth-of-type(6) {
+          min-width: 4rem;
+        }
+        &:nth-of-type(3),
+        &:nth-of-type(7) {
+          min-width: 5rem;
+        }
+        &:nth-of-type(5),
+        &:nth-of-type(8),
+        &:nth-of-type(9),
+        &:nth-of-type(10),
+        &:nth-of-type(12),
+        &:nth-of-type(11),
+        &:nth-of-type(13) {
+          min-width: 6rem;
+        }
+        &:nth-of-type(4) {
+          min-width: 14rem;
+        }
+      }
+
+      .input input {
+        display: block;
+        max-width: min-content;
+      }
+    }
+  }
+
+  .main .row:last-of-type {
+    margin-bottom: 1rem;
+  }
+
+  @media screen and (max-width: 1220px) {
+    .main .row:first-of-type .grid.eight {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .main .row:last-of-type .grid.three {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media screen and (max-width: 1020px) {
+    .main .row:first-of-type .grid.eight {
+      grid-template-columns: repeat(2, 1fr);
+
+      .action-btn {
+        margin: 0;
+        margin-bottom: 1rem;
+      }
+    }
+
+    .main .row:nth-child(2) .grid.four {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .main .row:last-of-type .grid.three {
+      grid-template-columns: repeat(1, 1fr);
+
+      .checkbox {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  @media screen and (max-width: 940px) {
+    .main .row:last-of-type {
+      .grid.two {
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      & > .grid.two .grid:last-of-type {
+        grid-row: 1;
+      }
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .main .row {
+      .grid.six,
+      .grid.three,
+      .grid.four,
+      .grid.eight,
+      .grid.two {
+        grid-template-columns: repeat(1, 1fr) !important;
+
+        .action-btn {
+          margin: 0;
+          margin-bottom: 1rem;
+        }
+      }
+
+      &:last-of-type > .grid > .grid:last-of-type {
+        grid-row: 1;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}

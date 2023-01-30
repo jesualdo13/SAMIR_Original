@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miami Job</title>
+    <link href="app.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <main class="row">
+
+        <div id="div1" class="col-4">
+
+            <figure>
+                <img id="img" src="img/img.jpg" width="100%" height="100%" alt="">
+            </figure>
+
+
+            <p style="color:white;" id="pError">   Mensaje de Error de Validacion</p>
+
+            <form>
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1" class="izquierda">Seleccionar Empresa:</label>
+
+                </div>
+                <select id="campo" class="form-select" aria-label="select example">
+                    <option selected class="izquierda">enterprise_id</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1" class="izquierda">Usuario:</label>
+                    <input id="campo" type="email" class="form-control" id="exampleFormControlInput1" placeholder="username">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1" class="izquierda">Password</label>
+                    <input id="campo" type="password" class="form-control" id="exampleInputPassword1" placeholder="password">
+                </div>
+                <div style="margin: 2% 0 4% 0 ;" class="form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Recordar Sesion</label>
+                    <a style="color: black;" href="" class="olvide noneDecoration">Olvide mi contraseña?</a>
+                </div>
+                <a href="desktop.html" style="margin-bottom: 2%;" id="btnIniciarSesion" type="submit" class="btn btn-primary">INICIAR SESION</a>
+            </form>
+
+            <a class="noneDecoration" href="Desktop.html"><b>Ayuda?</b></a>
+            <a class="noneDecoration" id="aRegistrarme" href="mainDashboard.html"><b>Registrarme</b></a>
+
+
+            <div id="divImg">
+                <img id="img" src="img/img.jpg" width="20%" height="100%" alt="">
+                <img id="img" src="img/img.jpg" width="20%" height="100%" alt="">
+                <img id="img" src="img/img.jpg" width="20%" height="100%" alt="">
+                <img id="img" src="img/img.jpg" width="20%" height="100%" alt="">
+            </div>
+
+            <p style="margin-bottom: 20%;" id="pCopyright">Copyright @ ExcellentSoft 2022.</p>
+        </div>
+        <div id="div2" class="col-8"></div>
+
+
+    </main>
+
+</body>
+</html>

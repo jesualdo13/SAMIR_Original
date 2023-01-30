@@ -1,0 +1,45 @@
+.form-groups {
+  .main {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 1100px) {
+    .main {
+      width: 80%;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .main {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 730px) {
+    .main .row .grid.three {
+      grid-template-columns: repeat(2, 1fr);
+
+      .action-btn {
+        margin-top: 0;
+      }
+
+      .checkbox {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+  @media screen and (max-width: 620px) {
+    .main .row .grid.three {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 420px) {
+    .main .row .grid.two.id {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    .basic-buttons.version-1 {
+      grid-template-columns: 52px 1fr;
+    }
+  }
+}

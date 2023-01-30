@@ -1,0 +1,49 @@
+@use "./base/globals";
+@use "./base/variables";
+
+@use "./components/auth/authPage";
+@use "./components/auth/login";
+
+@use "./components/register/registerPage";
+
+@use "./components/dashboard/dashboardPage";
+@use "./components/dashboard/common/currentRouteVisualizer";
+@use "./components/dashboard/common/navigationBar";
+@use "./components/dashboard/common/sideMenu";
+@use "./components/dashboard/quickAccess/quickAccessPage";
+@use "./components/dashboard/quickAccess/businessCard";
+@use "./components/dashboard/user/userPage";
+@use "./components/dashboard/user/navigationMenu";
+@use "./components/dashboard/user/profile";
+@use "./components/dashboard/user/account";
+@use "./components/dashboard/user/notifications";
+@use "./components/dashboard/user/plans";
+@use "./components/dashboard/user/planCard";
+@use "./components/dashboard/user/bills";
+@use "./components/dashboard/user/payments";
+@use "./components/dashboard/user/accountSuspension";
+@use "./components/dashboard/users/userCard";
+@use "./components/dashboard/users/usersPage";
+@use "./components/dashboard/business/businessPage";
+@use "./components/dashboard/plugins/pluginsPage";
+@use "./components/dashboard/plugins/plugin";
+
+@use "./components/workspace/loadingScreen";
+@use "./components/workspace/workspacePage";
+@use "./components/workspace/navigationBar/navigationBarWS";
+@use "./components/workspace/navigationBar/dropdownMenu";
+@use "./components/workspace/tabGenerator";
+@use "./components/workspace/window";
+@use "./components/workspace/shortcutsWindow";
+@use "./components/workspace/forms/basicButtons";
+@use "./components/workspace/forms/commonForm";
+@use "./components/workspace/forms/formInventory";
+@use "./components/workspace/forms/formCategories";
+@use "./components/workspace/forms/formBilling";
+@use "./components/workspace/forms/formCashClosing";
+@use "./components/workspace/forms/formCreditNotes";
+@use "./components/workspace/forms/formEmployeeSuppliersCustomers";
+@use "./components/workspace/forms/formGroups";
+@use "./components/workspace/forms/formPurchases";
+@use "./components/workspace/forms/formReferenceGuides";
+@use "./components/workspace/forms/formRetentions";

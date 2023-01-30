@@ -1,0 +1,2661 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/functions.js"></script>
+
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Archivos de Onsen UI -->
+    <link rel="stylesheet" href="OnsenUI-dist-2.11.2/css/onsenui.min.css">
+    <link rel="stylesheet" href="OnsenUI-dist-2.11.2/css/onsen-css-components.min.css">
+    <script src="OnsenUI-dist-2.11.2/js/onsenui.min.js"></script>
+    <!-- Libreria mapa -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <!-- <script src="cordova.js"></script> -->
+    <link rel="stylesheet" href="fonts/style.css">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="https://unpkg.com/onsenui/css/onsen-css-components.min.css">
+    <script src="https://unpkg.com/onsenui/js/onsenui.min.js"></script>
+
+
+    <link href="https://cdn.rawgit.com/OnsenUI/OnsenUI/1.2.2/build/css/onsenui.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    <script src="https://cdn.rawgit.com/OnsenUI/OnsenUI/1.2.2/build/js/onsenui.min.js"></script>
+    <link href="https://cdn.rawgit.com/OnsenUI/OnsenUI/1.2.2/build/css/onsen-css-components.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+
+    <ons-splitter>
+        <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+            <ons-page>
+                <ons-list>
+                    <ons-list-item modifier="chevron longdivider"
+                        onclick="fn.load('t_formulario_dashboard','p_formulario_dashboard')" tappable
+                        tap-background-color="#58AC55">
+                        <ons-icon class="icono" icon="" size="20px">&nbsp;Formulario dashboard</ons-icon>
+                    </ons-list-item>
+                    <ons-list-item modifier="chevron longdivider" onclick="fn.load('t_categoria','p_categoria')"
+                        tappable tap-background-color="#58AC55">
+                        <ons-icon class="icono" icon="" size="20px">&nbsp;Categoria</ons-icon>
+                    </ons-list-item>
+                    <ons-list-item modifier="chevron longdivider" onclick="fn.load('t_grupos','p_grupos')" tappable
+                        tap-background-color="#58AC55">
+                        <ons-icon class="icono" icon="" size="20px">&nbsp;Grupos</ons-icon>
+                    </ons-list-item>
+                    <ons-list-item modifier="chevron longdivider" onclick="fn.load('t_facturacion','p_facturacion')"
+                        tappable tap-background-color="#58AC55">
+                        <ons-icon class="icono" icon="" size="20px">&nbsp;Facturacion</ons-icon>
+                    </ons-list-item>
+                    <ons-list-item modifier="chevron longdivider" onclick="fn.load('t_guia_remision','p_guia_remision')"
+                        tappable tap-background-color="#58AC55">
+                        <ons-icon class="icono" icon="" size="20px">&nbsp;Guia de Remisiones</ons-icon>
+                    </ons-list-item>
+                    <ons-list-item modifier="chevron longdivider" onclick="fn.load('t_retencion','p_retencion')"
+                        tappable tap-background-color="#58AC55">
+                        <ons-icon class="icono" icon="" size="20px">&nbsp;Retenciones</ons-icon>
+                    </ons-list-item>
+                    <ons-list-item modifier="chevron longdivider"
+                        onclick="fn.load('t_registro_cliente','p_registro_cliente')" tappable
+                        tap-background-color="#58AC55">
+                        <ons-icon class="icono" icon="" size="20px">&nbsp;Registro de Cliente</ons-icon>
+                    </ons-list-item>
+                    <ons-list-item modifier="chevron longdivider"
+                        onclick="fn.load('t_nota_credito_venta','p_nota_credito_venta')" tappable
+                        tap-background-color="#58AC55">
+                        <ons-icon class="icono" icon="" size="20px">&nbsp;Nota de Credito Ventas</ons-icon>
+                    </ons-list-item>
+                    <ons-list-item modifier="chevron longdivider"
+                        onclick="fn.load('t_registro_compras_inventario','p_registro_compras_inventario')" tappable
+                        tap-background-color="#58AC55">
+                        <ons-icon class="icono" icon="" size="20px">&nbsp;Registro Compras Inventario</ons-icon>
+                    </ons-list-item>
+                    <ons-list-item modifier="chevron longdivider" onclick="fn.load('t_cierre_caja','p_cierre_caja')"
+                        tappable tap-background-color="#58AC55">
+                        <ons-icon class="icono" icon="" size="20px">&nbsp;Cierre Caja</ons-icon>
+                    </ons-list-item>
+                    <ons-list-item modifier="chevron longdivider" onclick="fn.load('t_inventario','p_inventario')"
+                        tappable tap-background-color="#58AC55">
+                        <ons-icon class="icono" icon="" size="20px">&nbsp;Inventario</ons-icon>
+                    </ons-list-item>
+
+                </ons-list>
+            </ons-page>
+        </ons-splitter-side>
+
+        <ons-splitter-content id="content">
+            <ons-navigator page="t_login" id="nav"></ons-navigator>
+        </ons-splitter-content>
+    </ons-splitter>
+
+    <template id="t_login">
+        <ons-page id="p_login">
+
+            <section>
+                <figure>
+                    <img id="img" src="img/img.jpg" width="100%" alt="">
+                </figure>
+
+
+                <p style="color:white;" id="pError"> Mensaje de Error de Validacion</p>
+
+                <form>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">RUC:</label>
+                        <select id="campo" class="form-select" aria-label="select example">
+                            <option selected>enterprise_id</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Usuario:</label>
+                        <input id="campo" type="email" class="form-control" placeholder="username">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Contraseña:</label>
+                        <input id="campo" type="password" class="form-control" id="exampleInputPassword1"
+                            placeholder="password">
+                    </div>
+                    <div style="margin: 2% 0 4% 0 ;" class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">Recordar Sesion</label>
+                        <a style="color: black;" class="olvide noneDecoration"
+                            onclick="fn.load('t_recovery','p_recovery')">Olvide mi contraseña?</a>
+                    </div>
+                    <a style="width: 100%; color: white;" onclick="fn.load('t_pagina_principal','p_pagina_principal')"
+                        type="submit" class="btn btn-primary">INICIAR SESION</a>
+                </form>
+
+                <a class="noneDecoration" href="Desktop.html"><b>Ayuda?</b></a>
+                <a class="noneDecoration" id="aRegistrarme" style="color: #0985F6;"
+                    onclick="fn.load('t_registro','p_registro')"><b>Registrarme</b></a>
+
+
+                <div id="divImg">
+                    <img id="img" src="img/img.jpg" width="20%" alt="">
+                    <img id="img" src="img/img.jpg" width="20%" alt="">
+                    <img id="img" src="img/img.jpg" width="20%" alt="">
+                    <img id="img" src="img/img.jpg" width="20%" alt="">
+                </div>
+
+                <p style="margin-bottom: 20%;" id="pCopyright">Copyright @ ExcellentSoft 2022.</p>
+            </section>
+        </ons-page>
+    </template>
+
+
+    <template id="t_recovery">
+        <ons-page id="p_recovery">
+
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>
+                        <ion-icon name="home-outline"></ion-icon>
+                    </ons-back-button>
+                </div>
+            </ons-toolbar>
+
+            <section>
+                <figure>
+                    <img id="img" src="img/img.jpg" width="100%" alt="">
+                </figure>
+
+
+                <p style="color:white;" id="pError"> Mensaje de Error de Validacion</p>
+
+                <form>
+
+                    <div class="form-group">
+                        <label class="izquierda">Ruc:</label>
+                        <input id="campo" type="email" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label class="izquierda">Correo de Recuperacion</label>
+                        <input id="campo" type="password" class="form-control" id="exampleInputPassword1"
+                            placeholder="">
+                    </div>
+
+                    <a id="btnIniciarSesion" style="margin-bottom: 2%; color: white;"
+                        onclick="fn.load('t_pagina_principal','p_pagina_principal')" type="submit"
+                        class="btn btn-primary">RECUPERAR CONTRASEÑA</a>
+                </form>
+
+                <a class="noneDecoration" href="Desktop.html"><b>Ayuda?</b></a>
+                <a class="noneDecoration" id="aRegistrarme" style="color: #0985F6;" onclick="fn.load('t_registro','p_registro')"><b>Registrarme</b></a>
+
+
+                <!-- <a class="noneDecoration" id="aRegistrarme" style="color: #0985F6;"
+                onclick="fn.load('t_registro','p_registro')"><b>Registrarme</b></a> -->
+
+                <div id="divImg">
+                    <img id="img" src="img/img.jpg" width="20%" alt="">
+                    <img id="img" src="img/img.jpg" width="20%" alt="">
+                    <img id="img" src="img/img.jpg" width="20%" alt="">
+                    <img id="img" src="img/img.jpg" width="20%" alt="">
+                </div>
+
+                <p style="margin-bottom: 20%;" id="pCopyright">Copyright @ ExcellentSoft 2022.</p>
+            </section>
+        </ons-page>
+    </template>
+
+
+    <template id="t_registro">
+        <ons-page id="p_registro">
+
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>
+                        <ion-icon name="home-outline"></ion-icon>
+                    </ons-back-button>
+                </div>
+            </ons-toolbar>
+
+
+            <h3>Datos de tu cuenta</h3>
+
+            <div style="margin:10px">
+                <input id="campo" type="email" class="form-control" placeholder="Ruc" style="margin: 5px 0;">
+                <input id="campo" type="email" class="form-control" placeholder="Razon Social" style="margin: 5px 0;">
+                <input id="campo" type="email" class="form-control" placeholder="Actividad Comercial"
+                    style="margin: 5px 0;">
+                <input id="campo" type="email" class="form-control" placeholder="Provincia" style="margin: 5px 0;">
+                <input id="campo" type="email" class="form-control" placeholder="Direccion" style="margin: 5px 0;">
+                <input id="campo" type="email" class="form-control" placeholder="Celular o Telefono"
+                    style="margin: 5px 0;">
+            </div>
+
+            <h3>Acceso a Cuenta</h3>
+            <div style="margin:10px">
+                <input id="campo" type="email" class="form-control" placeholder="Correo" style="margin: 5px 0;">
+                <input id="campo" type="email" class="form-control" placeholder="Contraseña" style="margin: 5px 0;">
+            </div>
+
+            <h3>Seleccionar Plan</h3>
+            <div style="margin:10px">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="exampleCheck1">XXXXXXXX</label> <span
+                    style="float: right; padding-right: 10px;">$ 200.00</span>
+                <p style="margin-left: 20px;">Detalle de plan</p>
+
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="exampleCheck1">XXXXXXXX</label> <span
+                    style="float: right; padding-right: 10px;">$ 200.00</span>
+                <p style="margin-left: 20px;">Detalle de plan</p>
+            </div>
+
+            <h3>Ciclo de Facturacion</h3>
+            <div style="margin:10px">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="exampleCheck1">XXXXXXXX</label> <span
+                    style="float: right; padding-right: 10px;">$ 200.00</span>
+                <p style="margin-left: 20px;">Detalle de plan</p>
+            </div>
+
+            <h3>Seleccionar Forma de Pago</h3>
+            <div style="margin:10px">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="exampleCheck1">Tarjeta de Credito</label> <span
+                    style="float: right; padding-right: 10px;">$ 200.00</span>
+                <p style="margin-left: 20px;">Detalle de plan</p>
+
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="exampleCheck1">PayPal</label> <span
+                    style="float: right; padding-right: 10px;">$ 200.00</span>
+                <p style="margin-left: 20px;">Detalle de plan</p>
+            </div>
+
+            <a style="width: 95%; color: white; margin: 2.5%;" type="submit" class="btn btn-primary">REGISTRAR PAGO</a>
+
+
+        </ons-page>
+    </template>
+
+
+    <template id="t_formulario_dashboard">
+        <ons-page id="p_formulario_dashboard">
+
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>
+                        <ion-icon name="home-outline"></ion-icon>
+                    </ons-back-button>
+                </div>
+                <div class="center">Formulario Dashboard</div>
+            </ons-toolbar>
+
+            <section>
+                <figure style="text-align: center;">
+                    <img style="border-radius: 80%;" src="img/gris.png" width="100px" height="100px" alt="">
+                    <p>Subir Logo</p>
+                </figure>
+
+                <form style="margin: 10px;">
+                    <div class="form-group">
+                        <label>Ruc</label>
+                        <input id="campo" type="email" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Razon Social</label>
+                        <input id="campo" type="password" class="form-control" id="exampleInputPassword1"
+                            placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nombre Corto</label>
+                        <input id="campo" type="email" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Representante Legal</label>
+                        <input id="campo" type="password" class="form-control" id="exampleInputPassword1"
+                            placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Actividad Comercial</label>
+                        <input id="campo" type="email" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Direccion</label>
+                        <input id="campo" type="password" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Correo para Ventas</label>
+                        <input id="campo" type="password" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Correo para Retenciones</label>
+                        <input id="campo" type="password" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Paginas Web, Dominio</label>
+                        <input id="campo" type="password" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Telefono</label>
+                        <input id="campo" type="password" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Celular</label>
+                        <input id="campo" type="password" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Fax</label>
+                        <input id="campo" type="password" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Autorizacion SRI</label>
+                        <input id="campo" type="password" class="form-control">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Resolucion SRI</label>
+                        <input id="campo" type="password" class="form-control">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Codigo Establecimiento</label>
+                        <input id="campo" type="password" class="form-control">
+                    </div>
+
+
+                    <div class="form-group">
+                        <label>Punto Emision Principal</label>
+                        <input id="campo" type="password" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tipo de Empresa</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="">No solicitar</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Localidad</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="">Buscar localidad ...y seleccionarla</option>
+                        </select>
+                    </div>
+
+                    <a id="btnIniciarSesion" style="margin-bottom: 2%; color: white;"
+                        onclick="fn.load('t_pagina_principal','p_pagina_principal')" type="submit"
+                        class="btn btn-primary">GUARDAR CAMBIOS</a>
+                </form>
+
+            </section>
+        </ons-page>
+    </template>
+
+    <template id="t_categoria">
+        <ons-page id="p_categoria">
+
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>
+                        <ion-icon name="home-outline"></ion-icon>
+                    </ons-back-button>
+                </div>
+                <div class="center">Registro de Categoria</div>
+            </ons-toolbar>
+
+            <section style="margin-left: 0;">
+
+                <form class="row" style="margin-left: 0;">
+
+                    <div class="form-group" style="width: 30%;">
+                        <label>ID</label>
+                        <input id="campo" type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 70%; ">
+                        <label>Nombre</label>
+                        <input id="campo" type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Descripcion</label>
+                        <input id="campo" type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>Pertenece a:</label>
+                        <input id="campo" type="text" class="form-control" placeholder="" style="padding-bottom: 7px;">
+                    </div>
+
+                    <label>Grupo Principal(Opcional)</label>
+
+                    <div class="form-group" style="width: 70%;">
+
+                        <input id="campo" type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <button id="btnBuscar" type="submit" class="btn btn-primary"
+                        style="width: 26%; height: 25%;">Buscar</button>
+
+
+                    <div style="padding-top: 4%;" class="row">
+                        <button style="background-color: #5A6B88; border: 0; margin-left: 4%; width: 15%; height: 40px;"
+                            type="submit" class="btn btn-primary"><span class="icon-magnifying-glass"></span></button>
+                        <button style="margin: 0 2% 0 2%; width: 62%;  height: 40px;" type="submit"
+                            class="btn btn-primary">GUARDAR REGISTRO</button>
+                        <button style="background-color: #B16868; border: 0;  width: 15%;  height: 40px;" id=""
+                            type="submit" class="btn btn-primary"><span class="icon-trash"></span></button>
+                    </div>
+
+
+                </form>
+
+
+            </section>
+        </ons-page>
+    </template>
+
+
+    <template id="t_grupos">
+        <ons-page id="p_grupos">
+
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>
+                        <ion-icon name="home-outline"></ion-icon>
+                    </ons-back-button>
+                </div>
+                <div class="center">Registro de Grupos</div>
+                <div class="right">
+                    <ons-toolbar-button icon="fa-sign-out" class="cerrar_sesion"></ons-toolbar-button>
+                </div>
+            </ons-toolbar>
+
+            <section>
+
+                <form class="row" style="margin: 0;">
+
+
+                    <div class="form-group" style="width: 30%;">
+                        <label>ID</label>
+                        <input id="campo" type="text" class="form-control" placeholder="" style="padding-bottom: 7px;">
+                    </div>
+
+
+                    <div class="form-group" style="width: 70%; ">
+                        <label>Nombre</label>
+                        <input id="campo" type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-check" style="margin-left: 15px;">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            BUSCAR ANULADOS
+                        </label>
+                    </div>
+
+
+
+
+                    <div class="form-group" style="width: 100%;  margin-top: 13px;">
+                        <label>Pertenece a:</label>
+                        <input id="campo" type="text" class="form-control" placeholder="" style="padding-bottom: 7px;">
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>Grupo Principal(Opcional)</label>
+                        <input id="campo" type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <button id="btnBuscar" type="submit" class="btn btn-primary"
+                        style="width: 14%; height: auto; margin-left: 14px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                            <path
+                                d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                        </svg>
+                    </button>
+
+                    <button id="btnBuscar" type="submit" class="btn btn-primary"
+                        style="width: 77%; height: 25%; margin-left: 5px;">SELECCIONAR</button>
+
+
+                    <div style="padding-top: 4%; margin-left: 1px;" class="row">
+                        <button style="background-color: #5A6B88; border: 0; width: 15%;" type="submit"
+                            class="btn btn-primary"><span class="icon-magnifying-glass"></span></button>
+                        <button style="width: 66%; margin: 0 5px;" type="submit" class="btn btn-primary">GUARDAR
+                            REGISTRO</button>
+                        <button style="background-color: #B16868; border: 0;  width: 15%;  " id="" type="submit"
+                            class="btn btn-primary"><span class="icon-trash"></span></button>
+                    </div>
+
+
+                </form>
+            </section>
+        </ons-page>
+    </template>
+
+
+
+
+    <template id="t_facturacion">
+        <ons-page id="p_facturacion">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>
+                        <ion-icon name="home-outline"></ion-icon>
+                    </ons-back-button>
+                </div>
+                <div class="center">Facturacion</div>
+                <div class="right">
+                    <ons-toolbar-button icon="fa-sign-out" class="cerrar_sesion"></ons-toolbar-button>
+                </div>
+            </ons-toolbar>
+
+            <section>
+
+                <form class="row margenFactura" style="margin: 0;">
+
+                    <div class="form-group margenFactura" style="width: 100%;">
+                        <label>Numero de Factura</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label>Fecha</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label>Caja</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label>Forma de pago</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label>Tipo de Documento</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <p></p>
+
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label>Bodega</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label>Centro de Costo</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 30%;  margin-top: 10px;">
+                        <input id="campo" type="text" class="form-control" placeholder="ID"
+                            style="padding-bottom: 9px;">
+                    </div>
+
+                    <div class="form-group" style="width: 70%;  margin-top: 10px;">
+                        <input type="text" class="form-control" placeholder="C.I o R.U.C">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 100%; margin-top: 10px;">
+
+                        <input type="text" class="form-control" placeholder="Nombre">
+                    </div>
+
+
+                    <button
+                        style="background-color: #475154; border: 0; margin-left: 4%; width: 65%; margin-top: 10px; border-radius: 50px;"
+                        type="submit" class="btn btn-primary">Agregar Producto</span></button>
+
+                    <table style="margin-top: 15px;">
+                        <tr>
+                            <td colspan="2">ARTIUCLO DE VENTA 1</td>
+                            <td>VENTA 1</td>
+                            <td>UND</td>
+                            <td>Bodega 1</td>
+                        </tr>
+                        <tr>
+                            <td>Precio</td>
+                            <td>Cantidad</td>
+                            <td>Desc%</td>
+                            <td>Total</td>
+                        </tr>
+                        <tr>
+                            <td><select name="" id="">
+                                    <option value="">1.2555</option>
+                                </select></td>
+                            <td>5</td>
+                            <td>10%</td>
+                            <td>5.50</td>
+                        </tr>
+                    </table>
+
+                    <table style="margin-top: 15px;">
+                        <tr>
+                            <td colspan="2">ARTIUCLO DE VENTA 1</td>
+                            <td>VENTA 1</td>
+                            <td>UND</td>
+                            <td>Bodega 1</td>
+                        </tr>
+                        <tr>
+                            <td>Precio</td>
+                            <td>Cantidad</td>
+                            <td>Desc%</td>
+                            <td>Total</td>
+                        </tr>
+                        <tr>
+                            <td><select name="" id="">
+                                    <option value="">1.2555</option>
+                                </select></td>
+                            <td>5</td>
+                            <td>10%</td>
+                            <td>5.50</td>
+                        </tr>
+                    </table>
+
+
+
+                    <button style="background-color: #5A6B88; border: 0; margin-left: 4%; width: 92%; margin-top: 10px;"
+                        type="submit" class="btn btn-primary">AGREGAR PRODUCTOS</button>
+
+
+                    <div class="form-group">
+                        <input style="margin-top: 15px;" type="text" class="form-control" placeholder="Descripcion">
+                    </div>
+
+                    <div style="margin-bottom: 20px;">
+                        <button
+                            style="background-color: #0095FF; border: 0; margin-left: 4%; width: 60%; margin-top: 10px;"
+                            type="submit" class="btn btn-primary">REGISTRAR VENTA</span></button>
+                        <button
+                            style="background-color: #E0E0E0; border: 0; margin-left: 4%; width: 30%; margin-top: 10px; color: black;"
+                            type="submit" class="btn btn-primary">CANCELAR</span></button>
+
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label style="background-color: #089CFD;">SUBTOTAL 0% $:</label>
+                        <input style="border: 3px solid #089CFD;" type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label style="background-color: #089CFD;">I.C.E.S:</label>
+                        <input style="border: 3px solid #089CFD;" type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label style="background-color: #089CFD;">SUBTOTAL 12% $:</label>
+                        <input style="border: 3px solid #089CFD;" type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label style="background-color: #089CFD;">I.R.B.P $:</label>
+                        <input style="border: 3px solid #089CFD;" type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label style="background-color: #089CFD;">I.V.A 12% $:</label>
+                        <input style="border: 3px solid #089CFD;" type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label style="background-color: #089CFD;">DESCUENTO $:</label>
+                        <input style="border: 3px solid #089CFD;" type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label style="background-color: #089CFD;">TOTAL $:</label>
+                        <input style="border: 3px solid #089CFD;" type="text" class="form-control" placeholder="">
+                    </div>
+
+                </form>
+            </section>
+        </ons-page>
+    </template>
+
+
+    <template id="t_guia_remision">
+        <ons-page id="p_guia_remision">
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>
+                        <ion-icon name="home-outline"></ion-icon>
+                    </ons-back-button>
+                </div>
+                <div class="center">Guia de Remision</div>
+                <div class="right">
+                    <ons-toolbar-button icon="fa-sign-out" class="cerrar_sesion"></ons-toolbar-button>
+                </div>
+            </ons-toolbar>
+
+            <section>
+
+                <form class="row margenFactura" style="margin: 0;">
+
+                    <div class="form-group margenFactura" style="width: 25%;">
+                        <label>Id*</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 75%;">
+                        <label>Numero Guia*</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 33%;">
+                        <label>Fecha Emi</label>
+                        <input type="date" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 33%;">
+                        <label>Fecha Salida</label>
+                        <input type="date" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 33%;">
+                        <label>Fecha Llegada</label>
+                        <input type="date" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group margenFactura" style="width: 25%;">
+                        <label>Id*</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 75%;">
+                        <label>Nombres Transportistas</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <button style="background-color: #5A6B88; border: 0; margin-left: 4%; width: 92%; margin-top: 10px;"
+                        type="submit" class="btn btn-primary">BUSCAR</button>
+
+
+                    <div class="form-group margenFactura" style="width: 25%;">
+                        <label>Id</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 75%;">
+                        <label>Nombres Destinatarios</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <button style="background-color: #5A6B88; border: 0; margin-left: 4%; width: 92%; margin-top: 10px;"
+                        type="submit" class="btn btn-primary">BUSCAR</button>
+
+                    <div class="form-group margenFactura" style="width: 25%;">
+                        <label>Id Fac*</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 75%;">
+                        <label>Numero Factura</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 100%;">
+                        <label>Autorización SRI Fact*</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <button style="background-color: #5A6B88; border: 0; margin-left: 4%; width: 92%; margin-top: 10px;"
+                        type="submit" class="btn btn-primary">SEL FACTURA</button>
+
+                    <table
+                        style="text-align:center; border-bottom: 1px solid rgba(128, 128, 128, 0.634); margin-top: 3%;">
+                        <tr style="background-color: #0095FF; color: white;">
+                            <td> <strong>ID</strong></td>
+                            <td><strong>UND</strong></td>
+                            <td><strong>DES</strong></td>
+                            <td><strong>CANT</strong></td>
+                            <td><strong>ADICIONAL</strong></td>
+                            <td><strong>DEL</strong></td>
+                        </tr>
+
+                        <tr>
+                            <td>123</td>
+                            <td>UND</td>
+                            <td>*ARTICULO DE VENTA 1</td>
+                            <td>5</td>
+                            <td>Adicional</td>
+                            <td>O</td>
+                        </tr>
+                    </table>
+
+
+                    <button style="background-color: #5A6B88; border: 0; margin-left: 4%; width: 92%; margin-top: 10px;"
+                        type="submit" class="btn btn-primary">AGREGAR PRODUCTOS</button>
+
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label>Ruta*</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label>Cod Aduanero</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label>Cod Estab. Dest</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label>Placa Trans*</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 100%;">
+                        <label>Direccion de Destino*</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 100%;">
+                        <label>Motivo de Traslado*</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <button id="btnBuscar" type="submit" class="btn btn-primary"
+                        style="height: 8.5%; margin: 1.5% 0.5% 0 0.7%; background-color: #0095FF; width: 65%;">REGISTRAR
+                        DOCUMENTO </button>
+
+                    <button id="btnBuscar" type="submit" class="btn btn-primary"
+                        style="height: 8.5%; margin-top: 1.5%; background-color: #E0E0E0; width: 33%; color: black;">CANCELAR
+                    </button>
+
+                </form>
+            </section>
+        </ons-page>
+    </template>
+
+
+
+
+    <template id="t_retencion">
+        <ons-page id="p_retencion">
+
+
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>
+                        <ion-icon name="home-outline"></ion-icon>
+                    </ons-back-button>
+                </div>
+                <div class="center">Retencion</div>
+                <div class="right">
+                    <ons-toolbar-button icon="fa-sign-out" class="cerrar_sesion"></ons-toolbar-button>
+                </div>
+            </ons-toolbar>
+
+            <section>
+
+                <form class="row margenFactura" style="margin: 0;">
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label>Fecha de Retencion</label>
+                        <input type="date" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+                        <label>Numero de Retencion</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <label style="width: 100%;">Periodo Fiscal</label>
+
+                    <div class="form-group margenFactura" style="width: 50%;">
+
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="">1-Factura</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group margenFactura" style="width: 100%;">
+                        <label>Autorizacion Retencion</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <h3>Datos de Documento y Proveedor:</h3>
+
+
+                    <div class="form-group" style="width: 30%;">
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <button style="background-color: #5A6B88; border: 0; width: 20%; height: 37px;" type="submit"
+                        class="btn btn-primary"><span class="icon-magnifying-glass"></span></button>
+
+
+                    <div class="row">
+                        <h3 class="col-4">Cod. Ingr...</h3>
+                        <h3 class="col-8">Numero de Factura</h3>
+                    </div>
+
+
+
+                    <div class="form-group" style="width: 30%;">
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 70%;">
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <button style="background-color: #5A6B88; border: 0; width: 100%; margin-top: 15px;" type="submit"
+                        class="btn btn-primary"><span class="icon-magnifying-glass"></span>Buscar Documento</button>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>Observacion</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 100%;">
+                        <h3><b>Fecha Emision:</b></h3>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <h3><b>Autorización de Factura</b></h3>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-check" style="width: 40%; margin: auto;">
+                        <label for="">Fisica</label>
+                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox"
+                            value="option1" aria-label="...">
+                    </div>
+                    <div class="form-check " style="width: 40%;">
+                        <label for="">Asumida</label>
+                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox"
+                            value="option1" aria-label="...">
+                    </div>
+
+                    <table class="default"
+                        style="background-color: #D9D9D9; border: #D9D9D9 10px solid; margin: 1% 0 1% 0;">
+
+                        <tr>
+                            <td>Cod Imp</td>
+                            <td>Cod Retencion</td>
+                            <td>Detalle Imp</td>
+                            <td>Base Imponible</td>
+                            <td>% Retención</td>
+                            <td>Valor Ret</td>
+                        </tr>
+
+                        <tr style="background-color: rgb(237, 237, 237);">
+                            <td>1</td>
+                            <td>304A</td>
+                            <td>Comisiones y demas pagos</td>
+                            <td>20.00</td>
+                            <td>10%</td>
+                            <td>5.50</td>
+                        </tr>
+
+                        <tr style="height: 10rem; background-color: white; border: #D9D9D9 10px solid;">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                    </table>
+                    <div class="form-group" style="width: 33%;">
+                        <label for="">Tipo de Impuesto</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="">Renta</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="width: 33%;">
+                        <label>Codigo Retencion</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 33%;">
+                        <label>Codigo Retencion</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label for=""></label>
+                        <button id="btnBuscar" type="submit" class="btn btn-primary col-12"
+                            style=" background-color: #507083; margin-top: 15px;">Buscar Impuesto</button>
+                    </div>
+
+
+                    <div class="form-group" style="width: 33%;">
+                        <label>Codigo Retencion</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 33%;">
+                        <label>Codigo Retencion</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 33%;">
+                        <label>Codigo Retencion</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label for=""></label>
+                        <button id="btnBuscar" type="submit" class="btn btn-primary col-12"
+                            style=" background-color: #507083; margin-top: 15px;">Agregar Impuesto</button>
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Base Imp. Factura $</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>IVA Factura $</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Total R. Renta $</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Total R. IVA $</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Total Retenido: $</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Total a Pagar: $</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+
+                    <button id="btnBuscar" type="submit" class="btn btn-primary"
+                        style="width: 100%; margin-top: 15px;">Cargar Por Cable de Acceso</button>
+                    <button id="" type="submit" class="btn btn-primary"
+                        style="width: 100%; margin: 10px 0; background-color: #0095FF;">LIMPIAR</button>
+                    <button id="btnBuscar" type="submit" class="btn btn-primary" style="width: 100%;">REGISTRAR
+                        RETENCION</button>
+
+
+                </form>
+            </section>
+        </ons-page>
+    </template>
+
+
+
+
+    <template id="t_registro_cliente">
+        <ons-page id="p_registro_cliente">
+
+
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>
+                        <ion-icon name="home-outline"></ion-icon>
+                    </ons-back-button>
+                </div>
+                <div class="center">Registro de Clientes</div>
+                <div class="right">
+                    <ons-toolbar-button icon="fa-sign-out" class="cerrar_sesion"></ons-toolbar-button>
+                </div>
+            </ons-toolbar>
+
+            <section>
+
+                <form class="row margenFactura" style="width: 100%; margin: 0;">
+
+
+                    <div class="form-group" style="width: 33%;">
+                        <label>ID</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 33%;">
+                        <label>Documento</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>RUC</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="width: 33%;">
+                        <label>RUC</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 60%;">
+                        <label>Razon Social</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 40%;">
+                        <label>Parte relacionada</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>SI</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>Nombre comercial o Representante Legal</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>Direccion</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <label>Locacion</label>
+                    <div class="form-group" style="width: 50%;">
+
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 40%;">
+
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Zona 1</option>
+                        </select>
+                    </div>
+
+                    <button style="background-color: #5A6B88; border: 0; width: 10%; height: 37px;" type="submit"
+                        class="btn btn-primary"><span class="icon-magnifying-glass"></span></button>
+
+
+                    <label>Grupo</label>
+                    <div class="form-group" style="width: 50%;">
+
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 40%;">
+
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Grupo A</option>
+                        </select>
+                    </div>
+
+                    <button style="background-color: #5A6B88; border: 0; width: 10%; height: 37px;" type="submit"
+                        class="btn btn-primary"><span class="icon-magnifying-glass"></span></button>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Telefono</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Celular</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 60%;">
+                        <label>E-mail</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 40%;">
+                        <label>Tipo de Registro</label>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option>Proveedor</option>
+                        </select>
+                    </div>
+
+
+                    <div id="containerTab" style="width: 100%;">
+                        <div class="row" style="width: 100%;">
+                            <div class="" style="width: 100%;">
+                                <div role="tabpanel" style="width: 100%;">
+                                    <ul class="nav nav-tabs" role="tablist" style="width: 100%;">
+                                        <li role="presentation" class=" nav-item" aria-current="page"
+                                            style="width: 47%; margin: 1.5%;"> <a class="btn btn-primary"
+                                                href="#seccion1" aria-controls="seccion1" data-toggle="tab" role="tab"
+                                                style="color:white; font-size: 14px; width: 100%;">Facturacion y
+                                                Credito</a></li>
+                                        <li class="active nav-item" aria-current="page" role="presentation"
+                                            style="width: 47%; margin: 1.5%;"> <a class="btn btn-primary"
+                                                href="#seccion2" aria-controls="seccion2" data-toggle="tab" role="tab"
+                                                style="color:white; font-size: 14px; width: 100%;">Datos Retenciones</a>
+                                        </li>
+                                        <li class="nav-item" aria-current="page" role="presentation"
+                                            style="width: 47%; margin: 1.5%;"> <a class="btn btn-primary"
+                                                href="#seccion3" aria-controls="seccion3" data-toggle="tab" role="tab"
+                                                style="color:white; font-size: 14px; width: 100%;">Datos Empleados</a>
+                                        </li>
+                                        <li class="nav-item" aria-current="page" role="presentation"
+                                            style="width: 47%; margin: 1.5%;"> <a class="btn btn-primary"
+                                                href="#seccion4" aria-controls="seccion4" data-toggle="tab" role="tab"
+                                                style="color:white; font-size: 14px; width: 100%;">Geolocalizacion</a>
+                                        </li>
+                                    </ul>
+
+                                    <div class="tab-content row" style="width: 100%;  margin: 0;">
+                                        <div role="tabpanel" class="tab-pane active" id="seccion1" style="width: 100%;">
+                                            <div class="form-group" style="width: 100%;">
+                                                <label>Clase de Sujeto:</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option value="">Mayorista</option>
+                                                </select>
+                                            </div>
+
+                                            <div class="form-group" style="width: 100%;">
+                                                <label>Cupo de Credito</label>
+                                                <input type="text" class="form-control" placeholder="">
+                                            </div>
+                                        </div>
+
+                                        <div role="tabpanel" class="tab-pane " id="seccion2" style="width: 100%; ">
+                                            <div style="width: 100%;" class="row">
+                                                <div class="form-check" style="margin-left: 15px;">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault"
+                                                        style="font-size: 16px; width: 90%;">
+                                                        Aplicar Retencion al Registrar Compra.
+                                                    </label>
+                                                </div>
+                                                <label>Cod. Ret/Fuente:</label>
+                                                <div class="form-group" style="width: 60%;">
+                                                    <input type="text" class="form-control" placeholder="">
+                                                </div>
+
+                                                <button
+                                                    style="background-color: #5A6B88; border: 0; margin-left: 4%; width: 15%; height: 40px;"
+                                                    type="submit" class="btn btn-primary"><span
+                                                        class="icon-magnifying-glass"></span></button>
+
+                                                <label>Cod. Ret/Iva:</label>
+                                                <div class="form-group" style="width: 60%;">
+                                                    <input type="text" class="form-control" placeholder="">
+                                                </div>
+
+                                                <button
+                                                    style="background-color: #5A6B88; border: 0; margin-left: 4%; width: 15%; height: 40px;"
+                                                    type="submit" class="btn btn-primary"><span
+                                                        class="icon-magnifying-glass"></span></button>
+                                            </div>
+                                        </div>
+
+                                        <div role="tabpanel" class="tab-pane " id="seccion3" style="width: 100%;  margin: 0;">
+                                            <div style="width: 100%; margin: 0;" class="row">
+
+                        
+                                                <div class="form-group" style="width: 50%;">
+                                                    <label>Cargo:</label>
+                                                    <input type="text" class="form-control" placeholder="">
+                                                </div>
+
+                                                <div class="form-group" style="width: 50%;">
+                                                    <label>Salario:</label>
+                                                    <input type="text" class="form-control" placeholder="">
+                                                </div>
+
+                                                <div class="form-group" style="width: 50%;">
+                                                    <label>H/D Mes:</label>
+                                                    <input type="text" class="form-control" placeholder="">
+                                                </div>
+                                                
+                                                <div class="form-group" style="width: 50%;">
+                                                    <label>Carg. Famil:</label>
+                                                    <input type="text" class="form-control" placeholder="">
+                                                </div>
+
+                                                <div class="form-group" style="width: 50%;">
+                                                    <label>F. Entrada:</label>
+                                                    <input type="date" class="form-control" placeholder="">
+                                                </div>
+                                                
+                                                <div class="form-group" style="width: 50%;">
+                                                    <label>F. Salida:</label>
+                                                    <input type="date" class="form-control" placeholder="">
+                                                </div>
+
+                                                <div class="form-group" style="width: 50%;">
+                                                    <label>Id Empresa:</label>
+                                                    <input type="text" class="form-control" placeholder="">
+                                                </div>
+                                                
+                                                <div class="form-group" style="width: 50%;">
+                                                    <label>Observ.:</label>
+                                                    <input type="text" class="form-control" placeholder="">
+                                                </div>
+
+           
+
+                                                <div class="form-check" style="margin-left: 15px;">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault"
+                                                        style="font-size: 16px; width: 90%;">
+                                                        Provisionar Décimos
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check" style="margin-left: 15px;">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault"
+                                                        style="font-size: 16px; width: 90%;">
+                                                        Provisionar Fondos de Reserva
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check" style="margin-left: 15px;">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault"
+                                                        style="font-size: 16px; width: 90%;">
+                                                        Asegurado
+                                                    </label>
+                                                </div>
+
+                                                <div class="form-check" style="margin-left: 15px;">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault"
+                                                        style="font-size: 16px; width: 90%;">
+                                                        Comisiones
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+
+                                        <div role="tabpanel" class="tab-pane " id="seccion4" style="width: 100%; ">
+                                            <div style="width: 100%;" class="row">
+
+                        
+                                                <div class="form-group" style="width: 50%;">
+                                                    <label>Latitud:</label>
+                                                    <input type="text" class="form-control" placeholder="">
+                                                </div>
+                                                <div class="form-group" style="width: 50%;">
+                                                    <label>Longitud:</label>
+                                                    <input type="text" class="form-control" placeholder="">
+                                                </div>
+
+                                                <a style="width: 95%; color: white; margin: 2.5%;" type="submit" class="btn btn-primary">Abrir Google Maps</a>
+
+                                                <div class="form-check" style="margin-left: 15px;">
+                                                    <input class="form-check-input" type="checkbox" value=""
+                                                        id="flexCheckDefault">
+                                                    <label class="form-check-label" for="flexCheckDefault"
+                                                        style="font-size: 16px; width: 90%;">
+                                                        Restablecer Acceso CFDI
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>
+
+
+                    <div style="padding-top: 4%;" class="row">
+                        <button style="background-color: #5A6B88; border: 0; margin-left: 4%; width: 15%; height: 40px;"
+                            type="submit" class="btn btn-primary"><span class="icon-magnifying-glass"></span></button>
+                        <button style="margin: 0 2% 0 2%; width: 62%;  height: 40px;" type="submit"
+                            class="btn btn-primary">GUARDAR REGISTRO</button>
+                        <button style="background-color: #B16868; border: 0;  width: 15%;  height: 40px;" id=""
+                            type="submit" class="btn btn-primary"><span class="icon-trash"></span></button>
+                    </div>
+
+
+                </form>
+            </section>
+        </ons-page>
+    </template>
+
+
+
+
+
+    <template id="t_nota_credito_venta">
+        <ons-page id="p_nota_credito_venta">
+
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>
+                        <ion-icon name="home-outline"></ion-icon>
+                    </ons-back-button>
+                </div>
+                <div class="center">Nota de Credito Ventas</div>
+                <div class="right">
+                    <ons-toolbar-button icon="fa-sign-out" class="cerrar_sesion"></ons-toolbar-button>
+                </div>
+            </ons-toolbar>
+
+            <section>
+
+                <form class="row margenFactura"  style="margin: 0;">
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Codigo</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Numero N.C</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Fecha</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Id Fact*</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Numero Factura</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Fecha Fact</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>Autorizacion SRI N.C</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>Razon Social</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <button id="btnBuscar" type="submit" class="btn btn-primary "
+                        style=" background-color: #6C6D6D; margin-top: 15px; width: 95%; margin: 15 auto;">SEL.
+                        FACTURA</button>
+
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>Sustento Tributario</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>Formas De Pago</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+
+                    <table class="default"
+                        style="background-color: #D9D9D9; border: #D9D9D9 10px solid; margin: 1% 0 1% 0; width: 100%;">
+
+                        <tr class="trTabla">
+                            <td>ID</td>
+                            <td>Cod.</td>
+                            <td>EMP</td>
+                            <td>EMP</td>
+                            <td>PROD.</td>
+                            <td>IVA</td>
+                            <td>FACTOR</td>
+                            <td>CANT.</td>
+                            <td>DEVOLUCION</td>
+                            <td>P.UNITARIO</td>
+                            <td>BODEGA</td>
+                            <td>BONO</td>
+                            <td>DESC%</td>
+                            <td>TOTAL</td>
+                        </tr>
+
+                        <tr style="background-color: rgb(237, 237, 237);">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr style="height: 10rem; background-color: white; border: #D9D9D9 10px solid;">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                    </table>
+
+                    <button id="btnBuscar" type="submit" class="btn btn-primary "
+                        style=" background-color: #6C6D6D; margin-top: 15px; width: 95%; margin: 15 auto;">DEVOLUCION
+                        TOTAL</button>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Total Factura</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Diferencia</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>Motivo*:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>SUBTOTAL 0%:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>I.C.E.S:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>SUBTOTAL 12%:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>I.R.B.P.S:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>I.V.A 12% $:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>DESCUENTO $:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>TOTAL $:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <button id="btnBuscar" type="submit" class="btn btn-primary "
+                        style=" background-color: #0095FF; margin-top: 15px; width: 60%; margin: 15px auto;">REGISTRAR
+                        DOCUMETNO</button>
+                    <button id="btnBuscar" type="submit" class="btn btn-primary "
+                        style=" background-color: #6C6D6D; margin-top: 15px; width: 40%; margin: 15px auto;">LIMPIAR
+                        TODO</button>
+
+
+
+                </form>
+            </section>
+        </ons-page>
+    </template>
+
+
+
+
+
+    <template id="t_registro_compras_inventario">
+        <ons-page id="p_registro_compras_inventario">
+
+
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>
+                        <ion-icon name="home-outline"></ion-icon>
+                    </ons-back-button>
+                </div>
+                <div class="center">Registro compras inventario</div>
+                <div class="right">
+                    <ons-toolbar-button icon="fa-sign-out" class="cerrar_sesion"></ons-toolbar-button>
+                </div>
+            </ons-toolbar>
+
+            <section>
+
+                <form class="row margenFactura"  style="margin: 0;">
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Codigo</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>RUC / C.I *</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div style="width: 100%;">
+                        <button id="btnBuscar" type="submit" class="btn btn-primary "
+                            style=" background-color: #6C6D6D; margin-top: 15px; width: 10%; margin: 15 auto;">+</button>
+
+                        <button id="btnBuscar" type="submit" class="btn btn-primary "
+                            style=" background-color: #6C6D6D; margin-top: 15px; width: 88%; margin: 15 auto;">PROVEEDOR</button>
+                    </div>
+
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Fecha</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Fecha Vence</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Forma Pago</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Division</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="width: 30%;">
+                        <label>ID Persona</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 70%;">
+                        <label>Razon Social</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Sustento Tributario</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Tipo de Comprobante</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+
+                    <table class="default"
+                        style="background-color: #D9D9D9; border: #D9D9D9 10px solid; margin: 1% 0 1% 0; width: 100%;">
+
+                        <tr class="trTabla">
+                            <td>ID</td>
+                            <td>Cod.</td>
+                            <td>EMP</td>
+                            <td>EMP</td>
+                            <td>PROD.</td>
+                            <td>IVA</td>
+                            <td>FACTOR</td>
+                            <td>CANT.</td>
+                            <td>DEVOLUCION</td>
+                            <td>P.UNITARIO</td>
+                            <td>BODEGA</td>
+                            <td>BONO</td>
+                            <td>DESC%</td>
+                            <td>TOTAL</td>
+                        </tr>
+
+                        <tr style="background-color: rgb(237, 237, 237);">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr style="height: 10rem; background-color: white; border: #D9D9D9 10px solid;">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                    </table>
+
+
+                    <div style="width: 100%;">
+                        <button id="btnBuscar" type="submit" class="btn btn-primary "
+                            style=" background-color: #6C6D6D; margin-top: 15px; width: 100%;">AGREGAR PRODUCTO</button>
+
+                        <button id="btnBuscar" type="submit" class="btn btn-primary "
+                            style=" background-color: #6C6D6D; margin-top: 15px; width: 100%;">AUTO HOMOLOGAR</button>
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>Copiar Factura(Enter)</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+
+                    <div style="width: 100%;">
+                        <button id="btnBuscar" type="submit" class="btn btn-primary "
+                            style=" background-color: #0095FF; margin-top: 15px; width: 100%;">CARGAR CLAVE DE
+                            ACCESO</button>
+
+                        <button id="btnBuscar" type="submit" class="btn btn-primary "
+                            style=" background-color: #0095FF; margin-top: 15px; width: 100%;">AUTO RETENCION</button>
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label for="">Total en Bonificaciones</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-check" style="width: 100%; margin: 10px 0 5px 20px;">
+                        <label for="">ACTUALIZAR PRECIO</label>
+                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox"
+                            value="option1" aria-label="...">
+                    </div>
+                    <div class="form-check " style="width: 100%; margin: 10px 0 10px 20px;">
+                        <label for="">ACTUALIZAR LOTES</label>
+                        <input class="form-check-input position-static" type="checkbox" id="blankCheckbox"
+                            value="option1" aria-label="...">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>SUBTOTAL 0%:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>I.C.E.S:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>SUBTOTAL 12%:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>I.R.B.P.S:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>I.V.A 12% $:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>DESCUENTO $:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>TOTAL $:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <button id="btnBuscar" type="submit" class="btn btn-primary "
+                        style=" background-color: #0095FF; margin-top: 15px; width: 60%; margin: 15px auto;">REGISTRAR
+                        DOCUMETNO</button>
+                    <button id="btnBuscar" type="submit" class="btn btn-primary "
+                        style=" background-color: #6C6D6D; margin-top: 15px; width: 40%; margin: 15px auto;">CANCELAR</button>
+
+
+                </form>
+            </section>
+        </ons-page>
+    </template>
+
+
+
+
+    <template id="t_cierre_caja">
+        <ons-page id="p_cierre_caja">
+
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>
+                        <ion-icon name="home-outline"></ion-icon>
+                    </ons-back-button>
+                </div>
+                <div class="center">Cierre de Caja</div>
+                <div class="right">
+                    <ons-toolbar-button icon="fa-sign-out" class="cerrar_sesion"></ons-toolbar-button>
+                </div>
+            </ons-toolbar>
+
+            <section>
+
+                <form class="row margenFactura" style="margin: 0;">
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Fecha inicio:</label>
+                        <input type="date" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Forma Pago:</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>Filtrar x Empleado:</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value=""></option>
+                        </select>
+                    </div>
+
+                    <div style="width: 100%;">
+                        <button id="btnBuscar" type="submit" class="btn btn-primary "
+                            style=" background-color: #6C6D6D; margin-top: 15px; width: 100%; margin: 15 auto;">LISTAR
+                            DOCUMENTOS</button>
+                    </div>
+
+
+                    <table class="default"
+                        style="background-color: #D9D9D9; border: #D9D9D9 10px solid; margin: 1% 0 1% 0; width: 100%;">
+
+                        <tr class="trTabla">
+                            <td>ID</td>
+                            <td>T.DOC</td>
+                            <td>FECHA</td>
+                            <td>F.PAGO</td>
+                            <td>NUMERO</td>
+                            <td>DETALLE</td>
+                            <td>VENDED.</td>
+                            <td>TOTAL</td>
+                            <td>ESTADO</td>
+
+                        </tr>
+
+                        <tr style="background-color: rgb(237, 237, 237);">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                        <tr style="height: 10rem; background-color: white; border: #D9D9D9 10px solid;">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+
+                    </table>
+
+                    <p>Registro de Ingresos y Egresos de Caja</p>
+
+                    <table class="default"
+                    style="background-color: #D9D9D9; border: #D9D9D9 10px solid; margin: 0 0 1% 0; width: 100%;">
+
+                    <tr class="trTabla">
+                        <td>ID</td>
+                        <td>CAJA</td>
+                        <td>TIPO</td>
+                        <td>FECHA</td>
+                        <td>F.PAGO</td>
+                        <td>NUMERO</td>
+                        <td>CONCEPTO</td>
+                        <td>USUARIO</td>
+                        <td>TOTAL</td>
+                        <td>ESTADO</td>
+                    </tr>
+
+                    <tr style="background-color: rgb(237, 237, 237);">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                    <tr style="height: 10rem; background-color: white; border: #D9D9D9 10px solid;">
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+
+                </table>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Num docs:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Docs Annul:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <p style="margin-top: 10px;">T.Facts: $0.00 | T. NVenta: $0.00 | T. Ingresos Caja: $0.00 | T.Egresos
+                        Caja: $0.00 | T. Egresos Caja: $0.00 | T.N.C: $0.00 | T. PgCli: $0.00 |
+                        T. Ingresos Caja: $0.00 | T. Egresos Caja: $0.00 </p>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>EFECTIVOS $:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>CHEQUES:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group" style="width: 50%;">
+                        <label>CREDITOS $:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>TARJET. $:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>OTROS $:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group" style="width: 50%;">
+                        <label>TOTAL N.C $:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>TOTAL VENTAS $:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="form-group" style="width: 50%;">
+                        <label>CIERRE $:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>SOBRANT $:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>FALTANT $:</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <button id="btnBuscar" type="submit" class="btn btn-primary "
+                        style=" background-color: #0095FF; margin-top: 15px; width: 60%; margin: 15px auto;">REGISTRAR
+                        CIERRE</button>
+                    <button id="btnBuscar" type="submit" class="btn btn-primary "
+                        style=" background-color: #6C6D6D; margin-top: 15px; width: 40%; margin: 15px auto;">CANCELAR</button>
+
+
+
+                </form>
+            </section>
+        </ons-page>
+    </template>
+
+
+
+
+    <template id="t_inventario">
+        <ons-page id="p_inventario">
+
+            <ons-toolbar>
+                <div class="left">
+                    <ons-back-button>
+                        <ion-icon name="home-outline"></ion-icon>
+                    </ons-back-button>
+                </div>
+                <div class="center">Inventario</div>
+                <div class="right">
+                    <ons-toolbar-button icon="fa-sign-out" class="cerrar_sesion"></ons-toolbar-button>
+                </div>
+            </ons-toolbar>
+
+            <section>
+
+                <form class="row margenFactura" style="margin: 0;">
+
+
+                    <div class="form-group" style="width: 33%;">
+                        <label>ID</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 33%;">
+                        <label>Clase</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="">Producto</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="width: 33%;">
+                        <label>ID Cat</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <label>Categoria</label>
+                    <div class="form-group" style="width: 90%;">
+
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <button style="background-color: #5A6B88; border: 0; width: 10%; height: 35px;" type="submit"
+                        class="btn btn-primary"><span class="icon-magnifying-glass"></span></button>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Stock/Bodega 1</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Stock Total</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>Nombre del Producto o Servicio</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>Detalle del Producto o Servicio</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>Presentacion</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="">Frasco</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Aplica IVA</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="">12%</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>APLICA I.C.E</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="">NO APLICA</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Fecha Expira</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Percha</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="">Percha 1</option>
+                        </select>
+                    </div>
+
+
+                    <label style="width: 30%;">Id Prov</label>
+
+                    <label style="width: 60%;">Proveedor</label>
+
+                    <div class="form-group" style="width: 30%;">
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 60%;">
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <button style="background-color: #5A6B88; border: 0; width: 10%; height: 35px;" type="submit"
+                        class="btn btn-primary"><span class="icon-magnifying-glass"></span></button>
+
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Ultima Compra</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Ultimo Prcio S.I</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Ultimo Descuento</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Ultima Bonificacion</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Stock Min/Bodega</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group" style="width: 50%;">
+                        <label>Stock Max/Bodega</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+
+
+                    <div class="form-group" style="width: 100%;">
+                        <label>Solicitar Info Adicional</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="">No solicitar</option>
+                        </select>
+                    </div>
+
+
+                <div id="containerTab" style="width: 100%; margin: 0;">
+                    <div class="row" style="width: 100%; margin: 0;">
+                        <div class="" style="width: 100%; margin: 0;">
+                            <div role="tabpanel" style="width: 100%; margin: 0;">
+                                <ul class="nav nav-tabs" role="tablist" style="width: 100%; margin: 0;">
+                                    <li role="presentation" class=" nav-item" aria-current="page"
+                                        style="width: 47%; margin: 1.5%;"> <a class="btn btn-primary"
+                                            href="#seccion1" aria-controls="seccion1" data-toggle="tab" role="tab"
+                                            style="color:white; font-size: 14px; width: 100%;">Presentacion y Precio</a></li>
+                                    <li class="active nav-item" aria-current="page" role="presentation"
+                                        style="width: 47%; margin: 1.5%;"> <a class="btn btn-primary"
+                                            href="#seccion2" aria-controls="seccion2" data-toggle="tab" role="tab"
+                                            style="color:white; font-size: 14px; width: 100%;">Escalas Bonif/Desc</a>
+                                    </li>
+                                    <li class="nav-item" aria-current="page" role="presentation"
+                                        style="width: 47%; margin: 1.5%;"> <a class="btn btn-primary"
+                                            href="#seccion3" aria-controls="seccion3" data-toggle="tab" role="tab"
+                                            style="color:white; font-size: 14px; width: 100%;">Lotes</a>
+                                    </li>
+                                    <li class="nav-item" aria-current="page" role="presentation"
+                                        style="width: 47%; margin: 1.5%;"> <a class="btn btn-primary"
+                                            href="#seccion4" aria-controls="seccion4" data-toggle="tab" role="tab"
+                                            style="color:white; font-size: 14px; width: 100%;">Atributos</a>
+                                    </li>
+                                </ul>
+
+                                <div class="tab-content row" style="width: 100%;  margin: 0;">
+                                    <div role="tabpanel" class="tab-pane active" id="seccion1" style="width: 100%;">
+                                        <table class="default"
+                                        style="background-color: #D9D9D9; border: #D9D9D9 10px solid; margin: 0 0 1% 0; width: 100%;">
+                    
+                                        <tr class="trTabla">
+                                            <td>Todos</td>
+                                            <td>CODIGO</td>
+                                            <td>EMP</td>
+                                            <td>FACTOR</td>
+                                            <td>P.Costo</td>
+                                            <td>P.C + IVA</td>
+                                            <td>Util%</td>
+                                            <td>PVP1</td>
+                                            <td>Util%</td>
+                                            <td>PVP2</td>
+                                            <td>Rango</td>
+                                            <td>PVP3</td>
+                                            <td>Rango</td>
+                                            <td>PVP4</td>
+                                            <td>Rango</td>
+                                            <td>PVP5</td>
+                                            <td>Rango</td>
+                                        </tr>
+                    
+                                        <tr style="background-color: rgb(237, 237, 237);">
+                                            <td>1234567899122</td>
+                                            <td>CODIGO</td>
+                                            <td>UND</td>
+                                            <td>1</td>
+                                            <td>0.0000</td>
+                                            <td>0.0000</td>
+                                            <td>15%</td>
+                                            <td>20.00</td>
+                                            <td>16%</td>
+                                            <td>20.00</td>
+                                            <td>6.00</td>
+                                            <td>39.00</td>
+                                            <td>12.00</td>
+                                            <td>40.00</td>
+                                            <td>18</td>
+                                            <td>40.00</td>
+                                            <td>30</td>
+                                        </tr>
+                    
+                                        <tr style="height: 10rem; background-color: white; border: #D9D9D9 10px solid;">
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                    
+                                    </table>
+                                    </div>
+
+                                    <div role="tabpanel" class="tab-pane " id="seccion2" style="width: 100%; ">
+                                        <div style="width: 100%;" class="row">
+                                            <div class="form-group" style="width: 50%;">
+                                                <label>Tipo</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option value="">Descuento</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group" style="width: 50%;">
+                                                <label>A partir de</label>
+                                                <input type="text" class="form-control" placeholder="">
+                                            </div>
+                                            <div class="form-group" style="width: 50%;">
+                                                <label>Empaque</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option value="">UND</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group" style="width: 50%;">
+                                                <label>Desc. o Bonif.</label>
+                                                <input type="text" class="form-control" placeholder="">
+                                            </div>
+
+                                            <div class="form-group" style="width: 50%;">
+                                                <label>Fecha Inicio</label>
+                                                <input type="text" class="form-control" placeholder="">
+                                            </div>
+
+                                            <div class="form-group" style="width: 50%;">
+                                                <label>Fecha Fin</label>
+                                                <input type="text" class="form-control" placeholder="">
+                                            </div>
+
+                                            <label>Los Dias</label>
+                                            <div class="form-group" style="width: 60%;">
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option value="">LUNES</option>
+                                                </select>
+                                            </div>
+
+
+
+                                            <a class="btn btn-primary"
+                                            href="#seccion4" aria-controls="seccion4" data-toggle="tab" role="tab"
+                                            style="background-color:#666666; font-size: 14px; width: 30%; border: 0; margin-left: 15px; height: 35px;">Agregar</a>
+                                        </div>
+
+                                        <table class="default"
+                                        style="background-color: #D9D9D9; border: #D9D9D9 10px solid; margin: 4% 0 1% 0; width: 100%;">
+                    
+                                        <tr class="trTabla">
+                                            <td>Tipo</td>
+                                            <td>Unidad</td>
+                                            <td>Desc. o Bonif.</td>
+                                            <td>Fecha Inicio</td>
+                                            <td>Fecha Fin</td>
+                                            <td>Dias</td>
+                                        </tr>
+                    
+                                        <tr style="background-color: rgb(237, 237, 237);">
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                    
+                                        <tr style="height: 3rem; background-color: white; border: #D9D9D9 10px solid;">
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                    
+                                    </table>
+                                    </div>
+
+                                    <div role="tabpanel" class="tab-pane " id="seccion3" style="width: 100%;  margin: 0;">
+                                        <div style="width: 100%;" class="row">
+                                            <div class="form-group" style="width: 40%;">
+                                                <label>Codigo</label>
+                                                <input type="text" class="form-control" placeholder="">
+                                            </div>
+                                            <div class="form-group" style="width: 60%;">
+                                                <label>Cantidad Disponible</label>
+                                                <input type="text" class="form-control" placeholder="">
+                                            </div>
+
+                                            <label>Fecha Vencimiento</label>
+                                            <div class="form-group" style="width: 60%;">
+                                                
+                                                <input type="text" class="form-control" placeholder="">
+                                            </div>
+
+                                            <a class="btn btn-primary"
+                                            href="#seccion4" aria-controls="seccion4" data-toggle="tab" role="tab"
+                                            style="background-color:#666666; font-size: 14px; width: 30%; border: 0; margin-left: 15px; height: 35px;">Agregar</a>
+                                        </div>
+
+                                        <table class="default"
+                                        style="background-color: #D9D9D9; border: #D9D9D9 10px solid; margin: 4% 0 1% 0; width: 100%;">
+                    
+                                        <tr class="trTabla">
+                                            <td>Codigo</td>
+                                            <td>Cantidad Disponible</td>
+                                            <td>Fecha Vencimiento</td>
+                                        </tr>
+                    
+                                        <tr style="background-color: rgb(237, 237, 237);">
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                    
+                                        <tr style="height: 3rem; background-color: white; border: #D9D9D9 10px solid;">
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                    
+                                    </table>
+                                    </div>
+
+
+                                    <div role="tabpanel" class="tab-pane " id="seccion4" style="width: 100%; margin: 0;">
+                                        <div style="width: 100%;" class="row">
+                                            <div class="form-group" style="width: 40%;">
+                                                <label>Atributo</label>
+                                                <input type="text" class="form-control" placeholder="">
+                                            </div>
+                                            <div class="form-group" style="width: 60%;">
+                                                <label>Valor o Descripcion</label>
+                                                <input type="text" class="form-control" placeholder="">
+                                            </div>
+
+                                            <a class="btn btn-primary"
+                                            href="#seccion4" aria-controls="seccion4" data-toggle="tab" role="tab"
+                                            style="background-color:#666666; font-size: 14px; width: 30%; border: 0; margin-left: 15px;">Agregar</a>
+                                        </div>
+
+                                        <table class="default"
+                                        style="background-color: #D9D9D9; border: #D9D9D9 10px solid; margin: 4% 0 1% 0; width: 100%;">
+                    
+                                        <tr class="trTabla">
+                                            <td>Atributo</td>
+                                            <td>Valor o Descripcion</td>
+                                        </tr>
+                    
+                                        <tr style="background-color: rgb(237, 237, 237);">
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                    
+                                        <tr style="height: 3rem; background-color: white; border: #D9D9D9 10px solid;">
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                    
+                                    </table>
+
+
+                                    </div>
+                                    </div>
+                                </div>
+
+                                <div style="padding-top: 4%;" class="row">
+                                    <!-- <div class="col-0.5"></div> -->
+                                    <button style="background-color: #5A6B88; border: 0; margin-left: 4%; width: 15%; height: 40px;"
+                                        type="submit" class="btn btn-primary"><span class="icon-magnifying-glass"></span></button>
+                                    <button style="margin: 0 2% 0 2%; width: 62%;  height: 40px;" type="submit"
+                                        class="btn btn-primary">GUARDAR REGISTRO</button>
+                                    <button style="background-color: #B16868; border: 0;  width: 15%;  height: 40px;" id=""
+                                        type="submit" class="btn btn-primary"><span class="icon-trash"></span></button>
+                                </div>
+
+                                <a class="btn btn-primary"
+                                href="#seccion4" aria-controls="seccion4" data-toggle="tab" role="tab"
+                                style="background-color:#666666; font-size: 14px; width: 50%; border: 0; margin: 15px auto; height: 35px;   display: flex;
+                                justify-content: center;">Limpiar Todo</a>
+
+                 
+                </form>
+            </section>
+        </ons-page>
+    </template>
+
+
+
+
+    <template id="t_pagina_principal">
+        <ons-page id="p_pagina_principal">
+
+            <ons-toolbar>
+                <div class="left">
+                    <ons-toolbar-button onclick="fn.open()">
+                        <ons-icon icon="md-menu"></ons-icon>
+                    </ons-toolbar-button>
+                </div>
+                <div class="center">Desktop</div>
+                <div class="right">
+                    <ons-toolbar-button icon="fa-sign-out" class="cerrar_sesion"></ons-toolbar-button>
+                </div>
+
+            </ons-toolbar>
+
+            <section style="width: 100%; height: 100%; background-color: #3A3A3A;">
+
+                <p style="color: white;">Accesos Directos</p>
+
+                <button type="button" class="btn" style="background-color: #444444; width: 48%; color: white; margin: 1%; height: 7%;">Buscador</button>
+                <button type="button" class="btn" style="background-color: #0268B0; width: 48%; color: white; height: 7%;">Facturar</button>
+
+                <button type="button" class="btn" style="background-color: #444444; width: 48%; color: white; margin: 1%; height: 7%;">Cotizar</button>
+                <button type="button" class="btn" style="background-color: #5E4CBF; width: 48%; color: white; height: 7%;">Cobrar</button>
+
+                <button type="button" class="btn" style="background-color: #444444; width: 48%; color: white; margin: 1%; height: 7%;">Inventario</button>
+                <button type="button" class="btn" style="background-color: #FF7A72; width: 48%; color: white; height: 7%;">Compras</button>
+
+                <button type="button" class="btn" style="background-color: #444444; width: 48%; color: white; margin: 1% 25%; height: 7%; ">Reportes</button>
+
+
+            </section>
+
+        </ons-page>
+    </template>
+
+</body>
+
+</html>
