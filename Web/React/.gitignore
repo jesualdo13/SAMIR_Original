@@ -27,3 +27,5 @@ yarn-error.log*
 
 notes.md
 out/
+
+*.DS_Store

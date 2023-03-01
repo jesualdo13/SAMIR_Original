@@ -27,7 +27,7 @@ const Login = () => {
     // subdomain: currentSubdomain ? currentSubdomain : "mqgvv219yadtu5pgwwi",
     subdomain: "mqgvv219yadtu5pgwwi",
     email: "xasa@gamil.com",
-    password: "123white",
+    password: "123",
     token_2fa: "",
   });
 
